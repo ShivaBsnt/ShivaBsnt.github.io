@@ -16,7 +16,7 @@ NodeMCU is an open source LUA based firmware developed for ESP8266 wifi chip.It 
 ### Now let's look at firebase setup
 
 1. Go to the firebase official website.([Firebase](https://firebase.google.com/))
-   ![step0](/assets/images/firebase-step0.png)
+   ![step0](/assets/images/firebasestep0.png)
 
 2. I am assuming that you have a google account here. Now click to the "Go to console" button at top right corner.
    ![step1](/assets/images/firebase-step1.png)
@@ -73,5 +73,5 @@ NodeMCU is an open source LUA based firmware developed for ESP8266 wifi chip.It 
 3. You have sucessfully connected nodemcu with firebase. You can write data into cloud firebase now.You can send boolean, integer,string or any other value to the firebase.To have a clear idea, look at the example below. There the boolean data has been sent instead of that you can use **"Firebase.setString"** to send string data and **"Firebase.setInteger"** to send Integer value.
    The format to send data is **"Firebase.setBool(firbaseData,"name of the variable to store data", actual_data)"**.
 
-   **********************\*\***********************Happy Coding**************************\***************************
+   **********\*\***********\*\***********\*\***********Happy Coding************\*\*************\*************\*\*************
    ![step1](/assets/images/nodemcu-step3.png)

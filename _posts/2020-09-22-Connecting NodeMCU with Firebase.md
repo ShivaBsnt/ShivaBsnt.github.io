@@ -1,6 +1,6 @@
 ---
 title: "Connecting NodeMCU with Firebase"
-
+Categories: IOT
 tags:
   - Arduino
   - Firebase

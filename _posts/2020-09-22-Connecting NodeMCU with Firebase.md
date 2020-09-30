@@ -5,6 +5,9 @@ tags:
   - Arduino
   - Firebase
   - NodeMCU
+
+header:
+  teaser: "/assets/images/2020-09-22-Connecting NodeMCU with Firebase/teaser.png"
 ---
 
 ![My helpful screenshot](/assets/images/nodemcu.png)

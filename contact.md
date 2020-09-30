@@ -4,4 +4,4 @@ permalink: /contact/
 layout: single
 ---
 
-This is a Contact page
+If you are interested in my work or there are any comments, question or constructive criticism you'd like to share, Please feel free to contact me via [mail](mailto:bbang2358@gmail.com).

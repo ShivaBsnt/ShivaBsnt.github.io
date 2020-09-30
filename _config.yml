@@ -93,13 +93,13 @@ analytics:
 author:
   name: "Shiva Bahadur Basnet"
   avatar: /assets/images/profile.jpg
-  bio: "Software Engineer."
+  bio: "Software Engineer"
   location: "Kageshwori Manohara"
 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:your.name@email.com"
+      url: "mailto:bbang2358@gmail.com"
 
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"

@@ -10,14 +10,14 @@
 -->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
+    {% include head.html %}
+    {% include head/custom.html %}
     <meta  property="fb:app_id"  content="399978388432408"  />
     <meta  property="fb:admins"  content="399978388432408"/>
     <meta  property="og:url"  content="URL"  />
     <meta  property="og:title"  content="TITLE"  />
     <meta  property="og:description"  content="DESC"  />
     <meta  property="og:image"  content="IMG"  />
-    {% include head.html %}
-    {% include head/custom.html %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">

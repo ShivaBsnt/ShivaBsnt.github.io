@@ -260,9 +260,9 @@ defaults:
       share: true
       related: true
 
-comments:
-  provider : "facebook"
-  facebook:
-    appid : 399978388432408
-    num_posts : # 5 (default)
-    colorscheme : # "light" (default), "dark"
+# comments:
+#   provider : "facebook"
+#   facebook:
+#     appid : 399978388432408
+#     num_posts : # 5 (default)
+#     colorscheme : # "light" (default), "dark"

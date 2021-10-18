@@ -261,7 +261,8 @@ defaults:
       related: true
 
 comments:
-  provider: "utterances"
-  utterances:
-    theme: "github-light" # "github-dark"
-    issue_term: "pathname"
+	provider : "facebook"
+	facebook:
+		appid : 399978388432408
+		num_posts : # 5 (default)
+		colorscheme : # "light" (default), "dark"

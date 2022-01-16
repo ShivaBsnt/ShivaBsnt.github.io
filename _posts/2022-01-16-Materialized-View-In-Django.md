@@ -12,7 +12,6 @@ header:
 ---
 
 ![Materialized View](/assets/images/2022-01-16-Materialized-View-In-Django/materialized_view.png)
-
 A “materialized view” is a database object which stores the result of a precalculated database query and makes it easy to refresh this result as needed.([cybertec-postgresql](https://www.cybertec-postgresql.com/en/creating-and-refreshing-materialized-views-in-postgresql/)). It is the replica of query data that does not execute in real time and takes a bit more room, but retrieves data more faster. One can schedule refresh of materialized view so that the latest information is not lost.
 
 #### Prerequisite Required
@@ -47,7 +46,7 @@ It should create a table **polls_user** in database. In my case, the name of loc
 
 Now let's populate some data into the table. I have used a Django admin panel to populate the data.
 
-![user_data](/assets/images/2022-01-16-Materialized-View-In-Django/user_data.PNG)
+![user_data](/assets/images/2022-01-16-Materialized-View-In-Django/user_data.png)
 #### Step 2. Create a lookup query on original table
 Run python shell and execute a query that select all the data from table **polls_user**.
 {% highlight python linenos %}

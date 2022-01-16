@@ -11,9 +11,7 @@ header:
 ---
 
 ![My helpful screenshot](/assets/images/nodemcu.png)
-
 ### Before connecting, lets start with what is nodemcu?
-
 NodeMCU is an open source LUA based firmware developed for ESP8266 wifi chip.It has 4MB of flash memory to store a program and the RAM of 128KB. It is a bluetooth as well as wifi hardware which makes it ideal for the IOT(The Internet of Things) projects. It can be powered with a Micro USB jack or the Vin and Gnd pin can be used to power supply externally.
 
 ### Now let's look at firebase setup

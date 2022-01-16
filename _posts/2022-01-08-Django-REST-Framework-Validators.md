@@ -11,7 +11,6 @@ header:
 ---
 
 ![My helpful screenshot](/assets/images/2022-01-08-Django-REST-Framework-Validators/rest_framework_validators.png)
-
 Validation in REST framework is entirely performed on serializer class. There are no any hidden behavior on model instance. All of the validation rule can be exactly seen by printing the representation of serializer.
 
 #### Lets make the model for customer report record

@@ -9,7 +9,6 @@ header:
 ---
 
 ![Jekyll logo](/assets/images/2020-10-03-Windows installation - jekyll static site generator/jekyll.png)
-
 ### Prerequisites Required
 
 1. **Ruby version 2.5.0 or higher**
@@ -17,7 +16,6 @@ header:
 3. **GCC and Make**
 
 ### Step 1 : Download Ruby Installer
-
 Go to the official site of Ruby and download **Ruby version 2.5.0 or higher**. And make sure that you download the ruby **"WITH DEVKIT"**.([Ruby](https://rubyinstaller.org/downloads/))
 ![ruby_installer](/assets/images/2020-10-03-Windows installation - jekyll static site generator/Step_2.png)
 

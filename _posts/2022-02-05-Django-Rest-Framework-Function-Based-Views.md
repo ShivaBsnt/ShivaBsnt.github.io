@@ -61,9 +61,9 @@ Now, we will use function based view to get and create a student.
 {% highlight python linenos %}
 @api_view(['GET', 'POST'])
 def get_post_student(request):
-if request.method.lower() == 'get':
-serializer = StudentSerializer(Student.objects.all(), many=True)
-return Response(serializer.data)
+    if request.method.lower() == 'get':
+    serializer = StudentSerializer(Student.objects.all(), many=True)
+    return Response(serializer.data)
 
     if request.method.lower() == 'post':
         serializer = StudentSerializer(data=request.data)

@@ -15,7 +15,7 @@ Rest framework provides simple set of decorators for regular Django function to 
 
 **GitHub-Link For Project** : [https://github.com/ShivaBsnt/DjangoRestFramework.git](https://github.com/ShivaBsnt/DjangoRestFramework.git)
 
-Let's make model, URL, serializer and quickly and jump straight to the views.
+Let's make model, URL, serializer and quickly jump straight to the views.
 
 ### Model
 
@@ -48,7 +48,7 @@ class StudentSerializer(serializers.ModelSerializer):
 
 {% endhighlight %}
 
-### Url
+### URL
 
 {% highlight python linenos %}
 path('student/', get_post_student, name='student'),"
@@ -147,7 +147,5 @@ The data validated from serializer gets saved here to database. The serializer r
 
 This line sends a data saved to database with suitable response.
 
-### Conclusion
-We have successfully built an api using function based views to **get** and **post** the student and learned about serializer.
 
 <------------------------ HAPPY CODING ------------------------>

@@ -260,9 +260,31 @@ defaults:
       share: true
       related: true
 
+# comments:
+#   provider : "facebook"
+#   facebook:
+#     appid : 399978388432408
+#     num_posts : # 5 (default)
+#     colorscheme : # "light" (default), "dark"
+  
+  # Set which comment system to use
 comments:
-  provider : "facebook"
-  facebook:
-    appid : 399978388432408
-    num_posts : # 5 (default)
-    colorscheme : # "light" (default), "dark"
+  # 'disqus' or 'utterances' are available
+  provider: "utterances"
+
+# You must install utterances github app before use.(https://github.com/apps/utterances)
+# Make sure all variables are set properly. Check below link for detail.
+# https://utteranc.es/
+utterances:
+  repo:                "ShivaBsnt/ShivaBsnt.github.io"
+  issue-term:          "url"
+  label:               "Comments"
+  theme:               "github-light"
+
+#   <script src="https://utteranc.es/client.js"
+#         repo="[ENTER REPO HERE]"
+#         issue-term="url"
+#         theme="github-light"
+#         crossorigin="anonymous"
+#         async>
+# </script>

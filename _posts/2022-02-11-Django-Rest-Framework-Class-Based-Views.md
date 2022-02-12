@@ -42,9 +42,9 @@ from rest_framework import serializers
 from Common.models import Student
 
 class StudentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Student
-        fields = "__all__"
+class Meta:
+model = Student
+fields = "**all**"
 
 {% endhighlight %}
 
@@ -89,7 +89,7 @@ class StudentAPIView(APIView):
 
 Unlike function based views, we have not checked the methods of incoming request by ourself above but the request has been dispatched to appropriate function **.get()** and **.post()** defined by us. Magic!!!😲
 
-![Cover Page](/assets/images/2022-02-11-Django-Rest-Framework-Class-Based-Views/magic.png)
+![Cover Page](/assets/images/2022-02-11-Django-Rest-Framework-Class-Based-Views/magic.PNG)
 
 The magic didn't happened by itself. Behind every great magic trick there is a tool hiding all the secrets. Likewise APIView here hides all the secret and lets magic to happen. Using an **APIView** is pretty much similar to using regular view as it inherits Django **View** class . All the incoming request is handled inside and at the end forwarded to appropriate function.
 

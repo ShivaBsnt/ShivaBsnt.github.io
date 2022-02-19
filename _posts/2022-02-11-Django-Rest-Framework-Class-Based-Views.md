@@ -25,11 +25,11 @@ Let's have a glance at our model and serializer and quickly jump into views. Our
 from django.db import models
 
 class Student(models.Model):
-first_name = models.CharField(max_length=10)
-last_name = models.CharField(max_length=10)
-email = models.EmailField()
-age = models.PositiveSmallIntegerField()
-number = models.CharField(max_length=15)
+    first_name = models.CharField(max_length=10)
+    last_name = models.CharField(max_length=10)
+    email = models.EmailField()
+    age = models.PositiveSmallIntegerField()
+    number = models.CharField(max_length=15)
 
 {% endhighlight %}
 
@@ -42,9 +42,9 @@ from rest_framework import serializers
 from Common.models import Student
 
 class StudentSerializer(serializers.ModelSerializer):
-class Meta:
-model = Student
-fields = "**all**"
+    class Meta:
+        model = Student
+        fields = "__all__"
 
 {% endhighlight %}
 

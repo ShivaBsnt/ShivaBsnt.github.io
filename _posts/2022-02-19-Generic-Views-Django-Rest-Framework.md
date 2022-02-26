@@ -167,4 +167,3 @@ The single word answer to all the above question is **yes** but its not us who d
 
 **Conclusion:** That's why generic views has attributes queryset and serializer_class to take the **uncommon** ones and generate all the common patterns under the hoods so that we do not have to repeat the code, allowing us to build an api quickly.
 
-

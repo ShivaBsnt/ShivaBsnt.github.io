@@ -8,7 +8,7 @@ tags:
   - Serializer
 
 header:
-  teaser: "/assets/images/2022-04-02-Serializer-Django-Rest-Framework/cover.png"
+  teaser: "/assets/images/2022-04-16-Model-Serializer-Django-Rest-Framework/model-serializer.png"
 ---
 
 ![Cover Page](/assets/images/2022-04-16-Model-Serializer-Django-Rest-Framework/model-serializer.png)

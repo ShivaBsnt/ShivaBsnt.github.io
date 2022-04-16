@@ -20,7 +20,7 @@ title: "Shiva Bahadur Basnet"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "Shiva Bahadur Basnet"
-description: "An amazing website."
+description: "Blog for Tech Enthusiast."
 url: https://shivabsnt.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "ShivaBsnt/shivabsnt.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -93,7 +93,7 @@ analytics:
 author:
   name: "Shiva Bahadur Basnet"
   avatar: /assets/images/profile.jpg
-  bio: "Tech Enthusiast"
+  bio: " Software Engineer"
   location: "Kageshwori Manohara"
 
   links:

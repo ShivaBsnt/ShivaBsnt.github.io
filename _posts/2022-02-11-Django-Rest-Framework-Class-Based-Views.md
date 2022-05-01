@@ -13,7 +13,9 @@ header:
 ![Cover Page](/assets/images/2022-02-11-Django-Rest-Framework-Class-Based-Views/cover_page.png)
 Instead of writing our API function based, we can write our API class based. The advantage it brings is a powerful pattern which allows us to reuse the common functionality keeping our code [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-**GitHub-Link For Project** : [https://github.com/ShivaBsnt/DjangoRestFramework.git](https://github.com/ShivaBsnt/DjangoRestFramework.git)
+**GitHub-Link For Project** : 
+
+[https://github.com/ShivaBsnt/DjangoRestFramework.git](https://github.com/ShivaBsnt/DjangoRestFramework.git)
 
 In previous blog we have used function based views to build our API. So we will use same **model** and **serializer** for our classed based views. In case you have missed it, here is the link.[(Django Rest Framework Function Based Views)](https://www.shivabahadurbasnet.com.np/programming/Django-Rest-Framework-Function-Based-Views/)
 

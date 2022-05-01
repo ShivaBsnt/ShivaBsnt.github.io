@@ -82,18 +82,26 @@ urlpatterns = [
 {% endhighlight %}
 
 Let’s add some of the comments using postman. At first, let’s send invalid data.
+
 ![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/serializer-validation.png)
 
 Here, the serializer validates the data before storing it in a database. We have defined in our serializer that the email field should be **email**, not a **character** or **text**.
-![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/validation1.png) So, the serializer validates the incoming data and prevents invalid data from storing into the database.
+
+![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/validation1.png) 
+So, the serializer validates the incoming data and prevents invalid data from storing into the database.
 
 Similarly, let's add invalid data to the subject and see how our serializer reacts.
+
 ![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/serializer-validation2.png) 
 
 In serializer, we have defined that our subject must be no longer than **250** characters.
-![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/validation2.png) Therefore serializer is again preventing invalid data and performing validation on every **POST** request.
+
+![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/validation2.png) 
+
+Therefore serializer is again preventing invalid data and performing validation on every **POST** request.
 
 **NOW, LET'S ADD SOME VALID COMMENTS**
+
 ![Seralizer](/assets/images/2022-04-02-Serializer-Django-Rest-Framework/valid-data.png)
 We can see data on **GET** requests which means that we have added valid data to our database. But as said earlier, python stores data in its native data type, so let’s see if the data is converted into its complex data type or not.
 

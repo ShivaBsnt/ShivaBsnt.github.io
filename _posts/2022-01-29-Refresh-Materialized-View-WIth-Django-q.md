@@ -16,6 +16,7 @@ We have already created a materialized view and used it to retrieve data in prev
 Please read ([Materialized View in Django](https://www.shivabahadurbasnet.com.np/programming/Materialized-View-In-Django/)) and ([How To Use PostgresSQL With Django](https://www.shivabahadurbasnet.com.np/programming/How-To-Use-PostgresSQL-With-Django/)) if you are new to the topics.
 
 But today we will use a **Djano-Q** instead of cron to schedule the refreshment of our materialized view. Here is the GitHub link to the project i am using.
+
 **([https://github.com/ShivaBsnt/Materialized-View-in-Django](https://github.com/ShivaBsnt/Materialized-View-in-Django))**
 
 ### Step1. Install a Django-Q

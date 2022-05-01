@@ -13,7 +13,9 @@ header:
 ![Cover Page](/assets/images/2022-02-05-Django-Rest-Framework-Function-Based-Views/cover.png)
 Rest framework provides simple set of decorators for regular Django function to wrap around, allowing function to receive the instance of **Request** (rather than the django HttpRequest) and return **Response** (instead of Django HttpResponse ) whereas Class-based views contains **APIView** which is a sub class of Django view.
 
-**GitHub-Link For Project** : [https://github.com/ShivaBsnt/DjangoRestFramework.git](https://github.com/ShivaBsnt/DjangoRestFramework.git)
+**GitHub-Link For Project** :
+
+ [https://github.com/ShivaBsnt/DjangoRestFramework.git](https://github.com/ShivaBsnt/DjangoRestFramework.git)
 
 Let's make model, URL, serializer and quickly jump straight to the views.
 

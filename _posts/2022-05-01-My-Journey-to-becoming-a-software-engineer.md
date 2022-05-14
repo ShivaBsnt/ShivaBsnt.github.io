@@ -2,10 +2,9 @@
 title: "My journey to becoming a Software Engineer"
 categories: Programming
 tags:
-  - Python
-  - Django
-  - Django Rest Framework
-  - Serializer
+  - Software Engineer
+  - Journey
+  - Road Map
 
 header:
   teaser: "/assets/images/2022-05-01-Journey-to-becoming-software-engineer/iw-team.jpg"

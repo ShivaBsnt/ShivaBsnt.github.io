@@ -227,4 +227,4 @@ REST_FRAMEWORK = {
 
 Now it will accept ***Bearer*** instead of ***Token***.
 
-![Bearer](/assets/images/2022-06-25-How-To-Implement-Token-Authentication-Using-Django-REST-Framework/bearer.png)
+![Bearer](/assets/images/2022-06-25-How-To-Implement-Token-Authentication-Using-Django-REST-Framework/bearer-token.png)

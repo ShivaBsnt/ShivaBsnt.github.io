@@ -1,6 +1,6 @@
 ---
 title: "How to Implement Token Authentication using Django REST Framework"
-categories: Web API 
+categories: programming
 tags:
   - Python
   - Django

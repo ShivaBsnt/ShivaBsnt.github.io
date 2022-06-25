@@ -46,7 +46,7 @@ To connect with a database run the command below:
 
 ![Granting Database Privilege ](/assets/images/2022-05-14-Accessing-Multiple-Postgres-Schema-From-Django/database-connect.PNG)
 
-    /c database_name
+    \c database_name
 
 Command to create a new schema:
 

@@ -7,10 +7,10 @@ tags:
   - Django Rest Framework
 
 header:
-  teaser: "/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/cover.png"
+  teaser: "/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/cover.png"
 ---
 
-![Cover Page](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/cover.png)
+![Cover Page](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/cover.png)
 
 ## Setup the Rest API Project
 
@@ -101,7 +101,7 @@ urlpatterns = [
 
 We have an endpoint **/api/v1/version/** where we can perform GET request. We can use browser to consume our API accessing the URL **http://127.0.0.1:8000/api/v1/version/**
 
-![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/result.png)
+![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/result.png)
 
 ### Step10. Implement Permission to Protect API
 
@@ -134,7 +134,7 @@ class APIVersion(APIView):
 
 Now, if we try to access the endpoints
 
-![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/result2.png)
+![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/result2.png)
 
 ### Step11. Implement Token Authentication
 Add ***rest_framework.authtoken*** in ***INSTALLED_APPS*** inside **_TokenAuthentication/settings.py_** and include ***TokenAuthentication*** to ***REST_FRAMEWORK***.
@@ -187,16 +187,16 @@ Now create **super user**. Run the command below on project root.
 
 You will be asked for username and password. I will be using ***username*** as **admin** and ***password*** as **admin**.
 
-![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/superuser.png)
+![Result](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/superuser.png)
 
 Now request for login with above superuser credential on URL **http://127.0.0.1:8000/api/v1/login/**
 
-![Login](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/login.png)
+![Login](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/login.png)
 
 **Note:**  ***We can also customize obtain_auth_token view***. Please refer to official django rest framework documentation for more details on customizing obtain_auth_token view. [CustomAuthToken](https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication))
 
 ### Now request API with token on the header
-![API Version](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/apiversion.png)
+![API Version](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/apiversion.png)
 
 #### Extra Tips
 
@@ -227,4 +227,4 @@ REST_FRAMEWORK = {
 
 Now it will accept ***Bearer*** instead of ***Token***.
 
-![Bearer](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-using-Django-REST-Framework/bearer.png)
+![Bearer](/assets/images/2022-06-25-How-to-Implement-Token-Authentication-Using-Django-REST-Framework/bearer.png)

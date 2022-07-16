@@ -14,7 +14,7 @@ header:
 
 As someone who wants to make a career in Information Technology, these questions might be troubling you. When we search **"Software Engineering"** on the web, we’re given some basic definitions like "Software engineering is an engineering approach on a software development of systematics application and a software engineer is a person who applies the principles of software engineering to design, develop, maintain, test and evaluate computer software." This jargon doesn’t mean much to someone trying to find the correct resources on where to start the software engineering journey and what you have to know. It would be so much easier if there was some sort of roadmap to navigate through this path. And through this article, that is what I intend to deliver - a guide to provide insights to kickstart your software engineer journey. 
 
-![Software Engineering RoadMap](/assets/images/2022-07-16-Software-Engineer-Road-Map/roadmap.png)
+![Software Engineering RoadMap](/assets/images/2022-07-16-Software-Engineer-Road-Map/road-map.png)
 
 I have created a basic chart that will guide you in your study. Let’s take a look at each step of this road map in detail.
 

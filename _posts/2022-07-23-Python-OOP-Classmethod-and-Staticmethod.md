@@ -14,13 +14,13 @@ header:
 ### Class methods
 It is a method bound to class rather than its object and is shared among all objects.  It receives class as a implicit first argument and can modify a class state which is applied to all the instances of the class.
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/classmethods.png)
+![Class method declaration example](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/classmethods.png)
 
 
 ### Static methods
 It is a method, much like class methods, that are bound to a class rather than its object. It does not take instance or class as the first argument. It is more like a regular method and can neither modify object state nor class state.
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/staticmethod.png)
+![Static method declaration example](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/staticmethod.png)
 
 Now, let's look at the simple example below where we have a class **Employee** which takes **first_name**, **last_name** and **salary** of the employee. The method **full_name** returns the full name of employee and the method **raised_salary** sets the new salary after rasing salary by **raise_amount**.
 
@@ -93,11 +93,11 @@ print(emp2.salary)#output 200000.0
 
 Here, the **classmethod** call is implicit as defined in its definition above. Though the method **update_raise_amount** takes two arguments, we have only passed **amount**.
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-exmp1.png)
+![Class method in action](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-example1.png)
 
 The class method has changed the state of attribute **raise_amount** of class **Employee** which has been reflected to all of its instances. The raise_amount for all instance has been now updated to **1.5** from **1.4**.
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-exmp2.png)
+![Class method to change raise amount](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-exmp2.png)
 
 It can be also use as an alternative constructor. Let's look at the example below.
 
@@ -147,13 +147,13 @@ print(emp2.salary)#output 200000.0
 
 Here, the details of employee is separated by comma **","** unlike above. It needs to be parsed before creating an **Employee** object. So we have used a class method that splits the employee information and then returns **Employee** object. Therefore, it is sometime called as an alternative constructor.
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-exmp3.png)
+![Class method as alternative constructor](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/cls-method-exmp3.png)
 
 If we want to see a real world example, we can see a class methods inside python datetime.
 
 [https://github.com/python/cpython/blob/main/Lib/datetime.py](https://github.com/python/cpython/blob/main/Lib/datetime.py)
 
-![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/datetime.png)
+![Class method implementation in python datetime](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/date-time.png)
 
 Now let's come to static method. When working with classes regular methods automatically pass the instance as the first argument and we call that **self** and class methods automatically pass the class as the first argument and we call that **cls**. The static method don't pass anything automatically neither instance or class. They behave like regular function except they are included in a classes because they have some logical connection with class.
 

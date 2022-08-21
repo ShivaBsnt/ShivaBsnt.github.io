@@ -3,7 +3,9 @@ title: Extra Actions For Routing
 categories: programming
 tags:
   - Python
-  - OOP
+  - DRF
+  - DjangoRestFramework
+  - decorator
 
 header:
   teaser: "/assets/images/2022-08-21-Extra-Actions-For-Routing/extra-action.png"

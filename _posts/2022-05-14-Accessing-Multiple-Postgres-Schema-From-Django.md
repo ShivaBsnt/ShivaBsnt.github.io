@@ -11,7 +11,6 @@ header:
 ---
 
 ![Cover Page](/assets/images/2022-05-14-Accessing-Multiple-Postgres-Schema-From-Django/cover.png)
-
 ## Database Configuration in PostgresSQL
 
 ### Step 1 : Create database on PostgresSQL

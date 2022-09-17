@@ -12,7 +12,6 @@ header:
 ---
 
 ![Cover Page](/assets/images/2022-08-21-Extra-Actions-For-Routing/extra-action.png)
-
 We can use **@action** decorator to add extra actions which can work for single object or an entire collection. In order to indicate the intend, we need to set **detail** argument which can be either **True** or **False** .
 If we set **detail=True**, the router configures it's URL pattern accordingly and requires **pk** in URL patterns. 
 

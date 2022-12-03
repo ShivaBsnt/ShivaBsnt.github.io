@@ -10,7 +10,6 @@ header:
 ---
 
 ![Cover Page](/assets/images/2022-07-23-Python-OOP-Classmethod-and-Staticmethod/staticmethod-and-classmethod.png)
-
 ### Class methods
 It is a method bound to class rather than its object and is shared among all objects.  It receives class as a implicit first argument and can modify a class state which is applied to all the instances of the class.
 

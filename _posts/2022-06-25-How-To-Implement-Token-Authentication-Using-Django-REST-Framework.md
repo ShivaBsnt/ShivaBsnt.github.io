@@ -11,7 +11,6 @@ header:
 ---
 
 ![Cover Page](/assets/images/2022-06-25-How-To-Implement-Token-Authentication-Using-Django-REST-Framework/cover.png)
-
 ## Setup the Rest API Project
 
 ### Step 1 : Install Django and Django Rest Framework

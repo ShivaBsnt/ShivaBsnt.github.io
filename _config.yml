@@ -18,7 +18,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale: "en-US"
 title: "Shiva Bahadur Basnet"
 title_separator: "-"
-subtitle: # site tagline that appears below site title in masthead
+subtitle: "IT'S EITHER 0 OR 1"
 name: "Shiva Bahadur Basnet"
 description: "Blog for Tech Enthusiast."
 url: https://shivabsnt.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -94,22 +94,25 @@ author:
   name: "Shiva Bahadur Basnet"
   avatar: /assets/images/profile.jpg
   bio: " Software Engineer"
-  location: "Kageshwori Manohara"
+  location: "Kathmandu, Nepal"
 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:shivabahadurbasnet313@gmail.com"
 
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: https://www.facebook.com/shiva.basnet.148
+    # - label: "Facebook"
+    #   icon: "fab fa-fw fa-facebook-square"
+    #   url: https://www.facebook.com/shiva.basnet.148
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: https://github.com/ShivaBsnt
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: https://www.instagram.com/bbang235i/
+    - label: "Buy Me a Coffee"
+      icon: "fas fa-fw fa-mug-hot"
+      url : "https://www.buymeacoffee.com/bshiva"
 
 # Site Footer
 footer:

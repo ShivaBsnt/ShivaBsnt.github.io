@@ -5,10 +5,10 @@ tags:
   - Python
 
 header:
-  teaser: "/assets/images/2023-02-04-For-Loop-In-Python/private_gpt.png"
+  teaser: "/assets/images/2023-07-08-Make-Your-Own-GPT/private_gpt.png"
 ---
 
-![Cover Page](/assets/images/2023-02-04-For-Loop-In-Python/private_gpt.png)
+![Cover Page](/assets/images/2023-07-08-Make-Your-Own-GPT/private_gpt.png)
 
 Although **ChatGPT** is incredible, its understanding is limited to the data used for training.
 

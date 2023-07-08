@@ -12,15 +12,15 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "dirt" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale: "en-US"
-title: "Shiva Bahadur Basnet"
+title: "Learning Loft"
 title_separator: "-"
-subtitle: "IT'S EITHER 0 OR 1"
+# subtitle: "IT'S EITHER 0 OR 1"
 name: "Shiva Bahadur Basnet"
-description: "Blog for Tech Enthusiast."
+description: "A platform dedicated to providing insightful and practical content on various programming topics. Get ready to delve into the intricacies of programming concepts and share valuable tutorials and guides. From demystifying the inner workings of Python's 'For Loop' to offering an iterative approach for reversing linked lists in Python, it covers a wide range of topics. Dive into the articles to learn about dynamically modifying fields in Django Rest Framework, gain a comprehensive understanding of Hash Tables, or master the art of dumping and restoring PostgreSQL databases. The blog offers informative and engaging content to enhance your programming skills."
 url: https://shivabsnt.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "ShivaBsnt/shivabsnt.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -92,10 +92,10 @@ analytics:
 
 author:
   name: "Shiva Bahadur Basnet"
-  avatar: /assets/images/profile.jpg
-  bio: " Software Engineer"
-  location: "Kathmandu, Nepal"
-
+  avatar: /assets/images/profile3.jpg
+  bio: "Data engineer with a love for fitness and a connection to the divine."
+  location: "Nepal"
+  
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -107,30 +107,40 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: https://github.com/ShivaBsnt
+
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: https://www.linkedin.com/in/shivabsnt/
+
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: https://www.instagram.com/bbang235i/
-    - label: "Buy Me a Coffee"
-      icon: "fas fa-fw fa-mug-hot"
-      url : "https://www.buymeacoffee.com/bshiva"
+      url: https://www.instagram.com/iamshivabasnet/
+    # - label: "Buy Me a Coffee"
+    #   icon: "fas fa-fw fa-mug-hot"
+    #   url : "https://www.buymeacoffee.com/bshiva"
 
 # Site Footer
 footer:
   links:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: https://www.facebook.com/shiva.basnet.148
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:shivabahadurbasnet313@gmail.com"
+
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: https://github.com/ShivaBsnt
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      url: https://gitlab.com/shivabasnet
+
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: https://www.linkedin.com/in/shivabsnt/
+
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      url: https://www.facebook.com/shiva.basnet.148
 
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: https://www.instagram.com/bbang235i/
-
+      url: https://www.instagram.com/iamshivabasnet/
 # Reading Files
 include:
   - .htaccess

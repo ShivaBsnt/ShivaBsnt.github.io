@@ -1,6 +1,6 @@
 ---
 title: "Refresh Materialized View With Django Q"
-categories: Programming
+categories: Database
 tags:
   - PostgresSQL
   - Python

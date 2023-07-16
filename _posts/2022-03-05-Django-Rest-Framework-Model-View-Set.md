@@ -1,6 +1,6 @@
 ---
 title: "ModelViewSet Django Rest Framework"
-categories: Programming
+categories: DRF
 tags:
   - Python
   - Django

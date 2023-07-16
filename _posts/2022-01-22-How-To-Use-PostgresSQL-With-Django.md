@@ -1,6 +1,6 @@
 ---
 title: "How To Use PostgresSQL With Django"
-categories: Programming
+categories: Database
 tags:
   - PostgresSQL
   - Python

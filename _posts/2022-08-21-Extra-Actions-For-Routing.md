@@ -1,6 +1,6 @@
 ---
 title: Extra Actions For Routing
-categories: programming
+categories: DRF
 tags:
   - Python
   - DRF

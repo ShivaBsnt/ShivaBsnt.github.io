@@ -1,6 +1,6 @@
 ---
 title: "Accessing Multiple Postgres Schema From Django"
-categories: Programming
+categories: Database
 tags:
   - Python
   - Django

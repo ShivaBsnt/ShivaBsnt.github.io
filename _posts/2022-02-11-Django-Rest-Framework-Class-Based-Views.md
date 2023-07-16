@@ -1,6 +1,6 @@
 ---
 title: "Django Rest Framework Class Based Views"
-categories: Programming
+categories: DRF
 tags:
   - SQL
   - Python

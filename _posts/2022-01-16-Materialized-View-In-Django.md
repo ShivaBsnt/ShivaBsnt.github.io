@@ -1,6 +1,6 @@
 ---
 title: "Materialized View in Django"
-categories: Programming
+categories: Database
 tags:
   - Python
   - Django

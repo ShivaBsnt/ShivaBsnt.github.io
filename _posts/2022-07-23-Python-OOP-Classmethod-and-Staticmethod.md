@@ -1,6 +1,6 @@
 ---
 title: Python OOP classmethods and staticmethods
-categories: programming
+categories: Python
 tags:
   - Python
   - OOP

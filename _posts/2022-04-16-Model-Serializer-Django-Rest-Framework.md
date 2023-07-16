@@ -1,6 +1,6 @@
 ---
 title: "Model Serializer - Django Rest framework"
-categories: Programming
+categories: DRF
 tags:
   - Python
   - Django

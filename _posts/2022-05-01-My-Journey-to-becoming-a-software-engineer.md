@@ -5,6 +5,8 @@ tags:
   - Software Engineer
   - Journey
   - Road Map
+  - Story
+  - Experience
 
 header:
   teaser: "/assets/images/2022-05-01-Journey-to-becoming-software-engineer/iw-team.jpg"

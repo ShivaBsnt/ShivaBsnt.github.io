@@ -1,10 +1,12 @@
 ---
 title: "How to Implement Token Authentication using Django REST Framework"
-categories: programming
+categories: DRF
 tags:
   - Python
   - Django
   - Django Rest Framework
+  - Authentication
+  - Token
 
 header:
   teaser: "/assets/images/2022-06-25-How-To-Implement-Token-Authentication-Using-Django-REST-Framework/cover.png"

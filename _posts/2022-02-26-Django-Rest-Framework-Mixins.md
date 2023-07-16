@@ -1,6 +1,6 @@
 ---
 title: "Django Rest Framework Mixins"
-categories: Programming
+categories: DRF
 tags:
   - Python
   - Django

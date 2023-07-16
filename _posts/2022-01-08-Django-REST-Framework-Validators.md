@@ -1,6 +1,6 @@
 ---
 title: "Django REST Framework Validators"
-categories: Programming
+categories: DRF
 tags:
   - Python
   - Django

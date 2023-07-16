@@ -1,6 +1,6 @@
 ---
 title: "Generic Views-Django Rest Framework"
-categories: Programming
+categories: DRF
 tags:
   - Python
   - Django

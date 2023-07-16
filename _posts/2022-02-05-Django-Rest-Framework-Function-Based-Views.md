@@ -1,6 +1,6 @@
 ---
 title: "Django Rest Framework Function Based Views"
-categories: Programming
+categories: DRF
 tags:
   - SQL
   - Python

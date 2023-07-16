@@ -1,6 +1,6 @@
 ---
 title: "Serializer - Django Rest Framework"
-categories: Programming
+categories: Serializer
 tags:
   - Python
   - Django

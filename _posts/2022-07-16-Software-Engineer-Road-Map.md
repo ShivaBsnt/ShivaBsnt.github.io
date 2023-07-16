@@ -1,6 +1,6 @@
 ---
 title: "What does a Software Engineer do? What do I have to do to become a software engineer?"
-categories: programming
+categories: Programming
 tags:
   - Software Engineer
   - Road Map

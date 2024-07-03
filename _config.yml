@@ -123,24 +123,25 @@ author:
 footer:
   links:
     - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
+      icon: "fas fa-envelope-square"
       url: "mailto:shivabahadurbasnet313@gmail.com"
 
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: https://github.com/ShivaBsnt
+      icon: "fab fa-github"
+      url: "https://github.com/ShivaBsnt"
 
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: https://www.linkedin.com/in/shivabsnt/
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/shivabsnt/"
 
     - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: https://www.facebook.com/shiva.basnet.148
+      icon: "fab fa-facebook-square"
+      url: "https://www.facebook.com/shiva.basnet.148"
 
     - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: https://www.instagram.com/iamshivabasnet/
+      icon: "fab fa-instagram"
+      url: "https://www.instagram.com/iamshivabasnet/"
+
 # Reading Files
 include:
   - .htaccess

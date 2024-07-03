@@ -4,4 +4,12 @@ permalink: /contact/
 layout: single
 ---
 
-If you are interested in my work or there are any comments, question or constructive criticism you'd like to share, Please feel free to contact me via [mail](mailto:shivabahadurbasnet313@gmail.com).
+I'd love to hear from you! Whether you have a question, a suggestion, or just want to say hi, feel free to get in touch.
+
+✉️ Email
+For any inquiries or collaborations, please email me at:
+[shivabahadurbasnet313@gmail.com](mailto:shivabahadurbasnet313@gmail.com)
+
+💬 Comments
+You can also leave comments on any of my blog posts. I love engaging with my readers and will do my best to respond promptly.
+

@@ -1,13 +1,10 @@
 ---
-title: Interning in Python: How It Saves Memory
-categories: Data
+title: "Interning in Python: How It Saves Memory 🐍💡"
+categories: "Python"
 tags:
-  - Business Intelligence
-  - Business Analysis
-  - DOMO
-  - BI
-  - BA
-
+  - "Python"
+  - "Memory Optimization"
+  - "Interning"
 header:
   teaser: "/assets/images/2023-07-15-Build-a-Custom-Connector-DOMO/domo-cover.png"
 ---

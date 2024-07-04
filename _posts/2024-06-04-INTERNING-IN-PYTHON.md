@@ -1,5 +1,5 @@
 ---
-title: Interning in Python: How It Saves Memory 🐍💡
+title: Interning in Python: How It Saves Memory
 categories: Data
 tags:
   - Business Intelligence

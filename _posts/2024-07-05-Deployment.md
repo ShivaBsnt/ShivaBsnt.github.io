@@ -36,7 +36,7 @@ git init --bare
 git --bare update-server-info
 git config core.bare false
 git config receive.denycurrentbranch ignore
-git config core.worktree /home/ubuntu/app/
+git config core.worktree /home/ubuntu/app/ #[update here]
 ```
 
 ```console

@@ -1,7 +1,7 @@
 ---
 title: How to Upload Files to AWS S3 using the
  Django Rest Framework?
-categories: Cloud
+categories: AWS
 tags:
   - Python
   - DRF

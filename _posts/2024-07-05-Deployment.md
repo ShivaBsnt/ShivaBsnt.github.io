@@ -9,8 +9,9 @@ tags:
 
 
 # Install Postgres on Server
+
 [How To Install and Use PostgreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
-```console
+```bash
 sudo apt update
 sudo apt install postgresql postgresql-contrib
 ```

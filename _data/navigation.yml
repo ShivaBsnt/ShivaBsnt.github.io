@@ -2,7 +2,7 @@
 main:
   - title: "Posts"
     url: /year-archive/
-  - title: "Sample categories"
+  - title: "Categories"
     url: /categories/
   - title: "About"
     url: /about/

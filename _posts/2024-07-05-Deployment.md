@@ -5,8 +5,12 @@ tags:
   - "Python"
   - "Django"
   - "Deploy"
+header:
+  teaser: "/assets/images/2024-07-05-Deployment/teaser.jpeg"
 ---
 
+
+![Cover Page](/assets/images/2024-07-05-Deployment/cover.jpeg)
 
 # Install Postgres on Server
 
@@ -21,10 +25,12 @@ sudo systemctl start postgresql.service
 ```
 
 # Install Git Nginx and other Tools
+
 ```console
 sudo apt-get install -y nginx git make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils python-setuptools         
 ```
 # Setting Up folders and Remote Repo
+
 ```console        
 mkdir repo.git app conf logs media static
 cd repo.git
@@ -51,6 +57,7 @@ chmod +x hooks/post-receive
 ```
 
 # Setting Up Virtual Env and Install Server Dependency
+
 ```console
 sudo apt-get install python3-venv libcairo2
 sudo apt-get install build-essential libssl-dev libffi-dev
@@ -61,11 +68,13 @@ python3 -m venv env
 ```
 
 # Activate Virtual Env
+
 ```console
 source env/bin/activate
 ```
 
 # Install Circus and Chaussette
+
 ```console
 pip install circus
 pip install chaussette
@@ -74,6 +83,7 @@ nano circus.ini
 ```
 
 # add this to circus.ini
+
 ```console
                
 [watcher:webapp]
@@ -100,6 +110,7 @@ host = 127.0.0.1
 port = 8085
 ```
 # Run and demonize circus.ini
+
 ```console
 circusd --daemon circus.ini
 circusctl reloadconfig
@@ -107,6 +118,7 @@ circusctl reload
 ```
 
 # Add Nginx Config
+
 ```console
 nano nginx.conf  # current location is ~/conf/
 ```
@@ -151,6 +163,7 @@ server {
 ```
 
 # Add nginx config to /etc/nginx/nginx.conf
+
 ```console
 nano /etc/nginx/nginx.conf
 # include your nginx conf
@@ -166,11 +179,13 @@ sudo systemctl restart nginx  # restart the server
 # Extras
 
 ## For HTTPS Part
+
 ```console
 sudo apt-get install python3-certbot-nginx
 sudo certbot --nginx
 ```
 ## Update nginx Conf
+
 ```console
 # include proxy_set_header X-Forwarded-Proto https so your new configuration will look like
     location / {
@@ -180,6 +195,7 @@ sudo certbot --nginx
     }
 ```
 ## HTTPS Settings For Django
+
 ```console 
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

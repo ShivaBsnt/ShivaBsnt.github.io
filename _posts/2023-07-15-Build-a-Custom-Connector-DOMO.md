@@ -68,7 +68,7 @@ Click on the plus icon and add a new connector.
 ![Types of Connector](/assets/images/2023-07-15-Build-a-Custom-Connector-DOMO/connector-type.png)
 
 Choose **"DATAGRID CONNECTOR"** for now. If you want to learn more about the Domo connector and it's type, please refer to this link
-([Domo Connector]([https://developer.domo.com/portal/wiemes1rk6atz-overview)).
+[Domo Connector](https://developer.domo.com)
 
 ## Step5 : Name the Connector
 

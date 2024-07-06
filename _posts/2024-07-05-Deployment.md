@@ -12,7 +12,7 @@ header:
 
 ![Cover Page](/assets/images/2024-07-05-Deployment/cover.jpeg)
 
-# Install Postgres on Server
+# Install Postgres on Server  
 
 [How To Install and Use PostgreSQL on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04)
 ```bash
@@ -22,9 +22,10 @@ sudo apt install postgresql postgresql-contrib
 
 ```console
 sudo systemctl start postgresql.service
-```
+```  
 
-# Install Git Nginx and other Tools
+
+# Install Git Nginx and other Tools  
 
 ```console
 sudo apt-get install -y nginx git make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils python-setuptools         
@@ -56,6 +57,7 @@ EOF
 chmod +x hooks/post-receive
 ```
 
+
 # Setting Up Virtual Env and Install Server Dependency
 
 ```console
@@ -67,11 +69,13 @@ sudo apt-get install python3-dev python3-cffi
 python3 -m venv env
 ```
 
+
 # Activate Virtual Env
 
 ```console
 source env/bin/activate
 ```
+
 
 # Install Circus and Chaussette
 
@@ -81,6 +85,7 @@ pip install chaussette
 cd conf
 nano circus.ini
 ```
+
 
 # add this to circus.ini
 
@@ -109,6 +114,8 @@ stderr_stream.backup_count = 3
 host = 127.0.0.1
 port = 8085
 ```
+
+
 # Run and demonize circus.ini
 
 ```console
@@ -116,6 +123,7 @@ circusd --daemon circus.ini
 circusctl reloadconfig
 circusctl reload
 ```
+
 
 # Add Nginx Config
 
@@ -162,6 +170,7 @@ server {
 }
 ```
 
+
 # Add nginx config to /etc/nginx/nginx.conf
 
 ```console
@@ -169,6 +178,8 @@ nano /etc/nginx/nginx.conf
 # include your nginx conf
 # include /home/ubuntu/conf/nginx.conf;
 ```
+
+
 # Test config and restart the server
 
 ```console
@@ -176,15 +187,19 @@ sudo nginx -t    # test should be successful
 sudo systemctl restart nginx  # restart the server
 ```
 
+
 # Extras
 
+
 ## For HTTPS Part
+
 
 ```console
 sudo apt-get install python3-certbot-nginx
 sudo certbot --nginx
 ```
 ## Update nginx Conf
+
 
 ```console
 # include proxy_set_header X-Forwarded-Proto https so your new configuration will look like
@@ -194,7 +209,10 @@ sudo certbot --nginx
         proxy_set_header X-Forwarded-Proto https;
     }
 ```
+
+
 ## HTTPS Settings For Django
+
 
 ```console 
 USE_X_FORWARDED_HOST = True

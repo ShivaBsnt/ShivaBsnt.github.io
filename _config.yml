@@ -112,9 +112,9 @@ author:
       icon: "fab fa-fw fa-linkedin"
       url: https://www.linkedin.com/in/shivabsnt/
 
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: https://www.instagram.com/iamshivabasnet/
+    - label: "Leetcode"
+      icon: "fab fa-fw fa-code"
+      url: https://leetcode.com/u/shiva_bahaur/
     # - label: "Buy Me a Coffee"
     #   icon: "fas fa-fw fa-mug-hot"
     #   url : "https://www.buymeacoffee.com/bshiva"

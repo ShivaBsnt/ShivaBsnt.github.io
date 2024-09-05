@@ -49,8 +49,8 @@ comments:
 reCaptcha:
   siteKey:
   secret:
-atom_feed:
-  path: # blank (default) uses feed.xml
+# atom_feed:
+#   path: # blank (default) uses feed.xml
 search: true
 search_full_content: # true, false (default)
 search_provider: # lunr (default), algolia, google
@@ -113,7 +113,7 @@ author:
       url: https://www.linkedin.com/in/shivabsnt/
 
     - label: "Leetcode"
-      icon: "fab fa-fw fa-code"
+      icon: "fas fa-code"
       url: https://leetcode.com/u/shiva_bahaur/
     # - label: "Buy Me a Coffee"
     #   icon: "fas fa-fw fa-mug-hot"
@@ -134,13 +134,16 @@ footer:
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/shivabsnt/"
 
-    - label: "Facebook"
-      icon: "fab fa-facebook-square"
-      url: "https://www.facebook.com/shiva.basnet.148"
+    - label: "Leetcode"
+      icon: "fas fa-code"
+      url: "https://leetcode.com/u/shiva_bahaur/"
+    # - label: "Facebook"
+    #   icon: "fab fa-facebook-square"
+    #   url: "https://www.facebook.com/shiva.basnet.148"
 
-    - label: "Instagram"
-      icon: "fab fa-instagram"
-      url: "https://www.instagram.com/iamshivabasnet/"
+    # - label: "Instagram"
+    #   icon: "fab fa-instagram"
+    #   url: "https://www.instagram.com/iamshivabasnet/"
 
 # Reading Files
 include:

@@ -22,7 +22,7 @@ Before we dive into **Server-Sent Events**, let’s quickly cover **polling** �
 
 For example, a web application might poll a server every 5 seconds to check for new messages or notifications. But this constant back-and-forth can quickly add up in both traffic and server load.
 
-[https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHA5cXQ2djZ3dG9nNGxqODI1Z3pzZHp4ejF3NG05aTR4NmYwMmM5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZlPT69XvdqgES5mPXf/giphy.gif](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHA5cXQ2djZ3dG9nNGxqODI1Z3pzZHp4ejF3NG05aTR4NmYwMmM5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZlPT69XvdqgES5mPXf/giphy.gif)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHA5cXQ2djZ3dG9nNGxqODI1Z3pzZHp4ejF3NG05aTR4NmYwMmM5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZlPT69XvdqgES5mPXf/giphy.gif)
 
 ## ❌ The Problem
 In one of my recent projects, I needed to deliver real-time updates to the frontend. My initial approach was straightforward: I used setInterval() in JavaScript to periodically poll an API endpoint for new data.

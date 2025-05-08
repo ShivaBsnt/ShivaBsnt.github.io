@@ -128,7 +128,6 @@ urlpatterns = [
 
 ![Server Stream Response](/assets/images/2025-05-08-server-sent-events/output2.png)
 
-![Frontend and Server Stream Response](/assets/images/2025-05-08-server-sent-events/output3.png)
 ## 🔗View the Full Code on GitHub
 ***You can view and clone the full working demo from my public GitHub repository here:***
 

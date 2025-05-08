@@ -122,16 +122,14 @@ urlpatterns = [
 </body>
 </html>
 ```
+📸 Here's a preview of the final output:
+
+![Server Sent Events](/assets/images/2025-05-08-server-sent-events/output.png)
 ## 🔗View the Full Code on GitHub
 ***You can view and clone the full working demo from my public GitHub repository here:***
 
 👉 [https://github.com/ShivaBsnt/ServerSentEvents.git](https://github.com/ShivaBsnt/ServerSentEvents.git)
 
-**Make sure to follow the instructions in the [README.md](https://github.com/ShivaBsnt/ServerSentEvents/blob/main/readme.md) to set up and run the project locally.**
-
-📸 Here's a preview of the final output:
-
-[server sent event](/assets/images/2025-05-08-server-sent-events/output.png)
 
 ## 🧠 Conclusion
 Replacing polling with Server-Sent Events (SSE) helped me solve real-time update issues without overloading the server. It simplified my backend logic, reduced client-side requests, and gave users a smoother experience. For one-way communication from server to client, SSE turned out to be a lightweight and reliable solution.

@@ -1,6 +1,6 @@
 ---
 title: "Snowflake Data Sharing Across Cloud Providers (AWS to Azure) Using Listings"
-categories: "Real-Time Communication"
+categories: "Snowflake"
 tags:
   - "Snowflake"
   - "DataSharing"

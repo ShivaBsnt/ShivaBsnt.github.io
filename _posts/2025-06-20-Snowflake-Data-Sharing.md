@@ -21,39 +21,37 @@ For private (controlled) sharing, Listings act as a bridge: we create a share, w
 
 ## Types of Listings in Snowflake
 1. 🔓 Public Listings
-   - Available on the **Snowflake Marketplace**
+   - Available on the **Snowflake Marketplace**.
 
-   - Discoverable by **all Snowflake users**
+   - Discoverable by **all Snowflake users**.
 
-   - Ideal for open data, commercial datasets, or public APIs
+   - Ideal for open data, commercial datasets, or public APIs.
 
-   - Can include documentation, sample queries, and usage instructions
-   
+   - Can include documentation, sample queries, and usage instructions.
 
 2. 🔐 Private Listings
-   - Shared only with **specific Snowflake accounts**
+   - Shared only with **specific Snowflake accounts**.
 
-   - Not visible in the public Marketplace
+   - Not visible in the public Marketplace.
 
-   - Best for secure, cross-org, or cross-cloud data sharing
+   - Best for secure, cross-org, or cross-cloud data sharing.
 
-   - Requires the **target account locator** during listing creation
+   - Requires the **target account locator** during listing creation.
 
-To walk through the process together, we’ll use:
-- **A free Snowflake account on AWS as our source**
+## To walk through the process together, we’ll use:
+- **Source**: A free Snowflake account on **AWS**.
+- **Target**: A free Snowflake account on **Azure**.
+- **Goal**: Share a table from the AWS account to the Azure account using a Private Listing.
 
-- **A free Snowflake account on Azure as our target**
-
-Our goal is to share a table from the AWS account to the Azure account using a Private Listing—and query the data live from the target side, without copying or moving anything.
-
-# Step-by-Step Guide
+# 🚀 Step-by-Step Guide
+Follow along with me step by step as we set up Snowflake data sharing from AWS to Azure using a Private Listing. We'll start from the provider side and  and go all the way to seeing the shared table reflected in the consumer account.
 ## 🧩 Step 1: Create a Private Listing (AWS Snowflake)
 
-1. Go to **Data Products** → **Provider Studio** in the Snowflake UI.
-2. Click "**Create Listing**" and select "Specified Consumers".
+1. Go to **"Data Products"** → **"Provider Studio"** in the Snowflake UI.
+2. Click "**"Create Listing"**" and select "**Specified Consumers**".
 
     ![data products](/assets/images/2025-06-20-Snowflake-Data-Sharing/data_products.png)
-3. Give your listing a name (e.g., data_share_listing) and click "**Next**".
+3. Give your listing a name (e.g., **data_share_listing**) and click "**Next**".
 
     ![data share listing](/assets/images/2025-06-20-Snowflake-Data-Sharing/data_share_listing.png)
 4. Add the required database, schema, and tables to the share.
@@ -69,9 +67,9 @@ Our goal is to share a table from the AWS account to the Azure account using a P
     ![select db, schema and table](/assets/images/2025-06-20-Snowflake-Data-Sharing/live_published_listing.png)
 
 ## 📤 Step 2: Set Refresh Frequency for the Listing
-To make sure that the changes in the **provider account** are reflected quickly in the **consumer account**, follow these steps when creating the listing:
+To make sure that the changes in the **"provider account"** are reflected quickly in the **"consumer account"**, follow these steps when creating the listing:
 
-1. Go to **Data Products** → **Provider Studio** in the provider account
+1. Go to **"Data Products"** → **"Provider Studio"** in the provider account
 From the Snowflake UI, click on "**Listings**".
 
     ![select db, schema and table](/assets/images/2025-06-20-Snowflake-Data-Sharing/listings_list.png)
@@ -104,7 +102,7 @@ From the Snowflake UI, click on "**Listings**".
 
    ![select db, schema and table](/assets/images/2025-06-20-Snowflake-Data-Sharing/consumer_db_from_listing.png)
 
-# 🧾 Wrapping Up
+# ✅ Conclusion
 In this blog, we explored how to share data across different cloud providers using Snowflake Listings, specifically from an AWS-hosted account to an Azure-hosted account. By using a Private Listing, we were able to securely publish data and access it from another Snowflake account without the need for any ETL jobs or complex integrations.
 
 This approach is simple, scalable, and production-friendly—ideal for organizations working in multi-cloud environments or collaborating with external partners.

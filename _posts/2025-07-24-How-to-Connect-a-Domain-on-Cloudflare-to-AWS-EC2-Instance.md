@@ -55,6 +55,7 @@ Name: www
 IPv4 Address: <same EC2 IP>
 Proxy: ON
 ```
+
 3. Click Save
 
 ## 🛰️ Step 3: Set Cloudflare as Primary & Secondary DNS in Your Domain Provider
@@ -94,7 +95,8 @@ Secondary Nameserver: emma.ns.cloudflare.com
   ```
   dig NS yourdomain.com.np +short
   ```
-## Step3: Enable Free SSL (HTTPS) on Cloudflare
+
+## Step4: Enable Free SSL (HTTPS) on Cloudflare
 Once DNS is active and orange cloud is on (proxy enabled), you can enable SSL:
 
  🔐 Steps:

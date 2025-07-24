@@ -34,17 +34,21 @@ header:
 5. Let Cloudflare scan existing DNS records
 
 6. Proceed to the next step (you'll add your EC2 IP next)
+
 ## 🌐 Step 2: Point DNS to Your EC2 IP
 1. Go to the DNS tab inside your Cloudflare dashboard
 
 2. Add the following A records:
 
-```Type: A
+```
+Type: A
 Name: @
 IPv4 Address: <your EC2 public IP>
 Proxy: ON (orange cloud) or OFF if needed
 ```
+
 Optional (for www):
+
 ```
 Type: A
 Name: www

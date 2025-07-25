@@ -13,9 +13,9 @@ tags:
   - "https"
 
 header:
-  teaser: "/assets/images/2025-06-20-Snowflake-Data-Sharing/teaser.png"
+  teaser: "/assets/images/2025-07-24-How-to-Connect-a-Domain-on-Cloudflare-to-AWS-EC2-Instance/teaser.png"
 ---
-![Cover Page](/assets/images/2025-06-20-Snowflake-Data-Sharing/cover.png)
+![Cover Page](/assets/images/2025-07-24-How-to-Connect-a-Domain-on-Cloudflare-to-AWS-EC2-Instance/cover.png)
 
 ## ✅ Requirements
 1. A registered domain name (e.g., **mydomain.com.np**)

@@ -91,8 +91,6 @@ You must copy these and go to your domain registrar (like Namecheap, GoDaddy, et
 > 1. It may take a few minutes to hours for DNS to propagate (**~1–24 hrs** ⏳)  
 > 2. please ensure our domain is already approved and **active** in the .np system.
 
->💡 **Tip:** Check DNS Propagation Online: https://www.whatsmydns.net/
-
 
 ## Step 4: Enable Free SSL (HTTPS) on Cloudflare
 Once DNS is active and orange cloud is on (proxy enabled), you can enable SSL:

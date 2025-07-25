@@ -18,7 +18,7 @@ header:
 ![Cover Page](/assets/images/2025-06-20-Snowflake-Data-Sharing/cover.png)
 
 ## ✅ Requirements
-1. A registered domain name
+1. A registered domain name (e.g., **mydomain.com.np**)
 2. A Cloudflare account
 3. AWS EC2 instance
 
@@ -26,11 +26,11 @@ header:
 
 1. Log in to https://dash.cloudflare.com
 
-2. Click “Add a Site”
+2. Click “**Add a Site**”
 
-3. Enter your domain (e.g., example.com)
+3. Enter your domain (e.g., mydomain.com.np)
 
-4. Select the Free plan
+4. Select the **Free plan**
 
 5. Let Cloudflare scan existing DNS records
 
@@ -58,16 +58,15 @@ header:
     ```
 3. Click Save
 
-## 🛰️ Step 3: Set Cloudflare as Primary & Secondary DNS in Your Domain Provider
+## Step 3: Set Cloudflare as Primary & Secondary DNS in Your Domain Provider
 Cloudflare gives you two nameservers, for example:
 ```
 NameServer 1: clark.ns.cloudflare.com  
 NameServer 2: emma.ns.cloudflare.com 
 ```
-
 You must copy these and go to your domain registrar (like Namecheap, GoDaddy, etc.):
 
-### 📌 Example: On register.com.np
+### Example: On register.com.np
 
 1. Visit: https://register.com.np
 
@@ -75,7 +74,7 @@ You must copy these and go to your domain registrar (like Namecheap, GoDaddy, et
 
 3. Go to the “Domain List”
 
-4. Click your domain name (e.g. yourname.com.np)
+4. Click your domain name (e.g. mydomain.com.np)
 
 5. Scroll to the section called Nameservers
 
@@ -88,20 +87,36 @@ You must copy these and go to your domain registrar (like Namecheap, GoDaddy, et
 
 7. Click Update Nameservers
 
-> **Note:** It may take a few minutes to hours for DNS to propagate (~1–24 hrs ⏳)and please ensure your domain is already approved and active in the .np system
+> **Note:** 
+> 1. It may take a few minutes to hours for DNS to propagate (**~1–24 hrs** ⏳)  
+> 2. please ensure our domain is already approved and **active** in the .np system.
+
+>💡 **Tip:** Check DNS Propagation Online: https://www.whatsmydns.net/
 
 
-
-## Step4: Enable Free SSL (HTTPS) on Cloudflare
+## Step 4: Enable Free SSL (HTTPS) on Cloudflare
 Once DNS is active and orange cloud is on (proxy enabled), you can enable SSL:
 
- 🔐 Steps:
-1. Go to Cloudflare dashboard → SSL/TLS tab
+1. Go to Cloudflare dashboard → **SSL/TLS tab**
 
 2. Set SSL Mode to:
 
-    - Flexible → if your EC2 has no SSL certificate
+    1. **Flexible** → if your EC2 has no SSL certificate
 
-    - Full or Full (Strict) → if your EC2 has a valid certificate
+    2. **Full or Full (Strict)** → if your EC2 has a valid certificate
 
-Cloudflare now handles HTTPS for your domain — even if your EC2 isn’t configured for SSL.
+> **Note:**
+> 1. If your EC2 instance does not have an SSL certificate, set SSL/TLS mode to "Flexible" in Cloudflare.
+> 2. If your EC2 instance has a valid SSL certificate installed, you should use "Full" or "Full (Strict)" mode for end-to-end encryption.
+
+## Conclusion
+By setting up Cloudflare as our **free DNS service**, we gain better control, **enhanced security (with SSL)**, and **improved performance** for our AWS-hosted website.
+
+In this guide, we:
+1. Pointed nameservers from our domain registrar to Cloudflare
+
+2. Set up A records to our EC2 public IP
+
+3. Enabled SSL to secure traffic using Cloudflare.
+
+Once everything is in place, our website becomes globally accessible and benefits from Cloudflare’s powerful edge network and security features — all at no cost.

@@ -1,5 +1,5 @@
 ---
-title: "⚡ How to Connect a Domain on Cloudflare to AWS EC2 Instance"
+title: "How to Connect a Domain on Cloudflare to AWS EC2 Instance"
 categories: "Cloudfare"
 tags:
   - "Cloudflare"
@@ -78,23 +78,17 @@ You must copy these and go to your domain registrar (like Namecheap, GoDaddy, et
 5. Scroll to the section called Nameservers
 
 6. Replace existing nameservers with:
+
 ```
 Primary Nameserver: clark.ns.cloudflare.com
 Secondary Nameserver: emma.ns.cloudflare.com
 ```
-7. Click ✅ Update Nameservers
 
-(**Note: ⏳ It may take a few minutes to hours for DNS to propagate.**)
+7. Click Update Nameservers
 
-**⚠️ Notes for .np Domains**
-- DNS changes may take longer to apply (~1–24 hrs)
+> **Note:** It may take a few minutes to hours for DNS to propagate (~1–24 hrs ⏳)and please ensure your domain is already approved and active in the .np system
 
-- Ensure your domain is already approved and active in the .np system
 
-- You can check your nameserver status using:
-  ```
-  dig NS yourdomain.com.np +short
-  ```
 
 ## Step4: Enable Free SSL (HTTPS) on Cloudflare
 Once DNS is active and orange cloud is on (proxy enabled), you can enable SSL:
@@ -104,20 +98,8 @@ Once DNS is active and orange cloud is on (proxy enabled), you can enable SSL:
 
 2. Set SSL Mode to:
 
-- Flexible → if your EC2 has no SSL certificate
+    - Flexible → if your EC2 has no SSL certificate
 
-- Full or Full (Strict) → if your EC2 has a valid certificate
-
-3. Enable:
-
-- ✅ Always Use HTTPS
-
-- ✅ Auto HTTPS Rewrites
+    - Full or Full (Strict) → if your EC2 has a valid certificate
 
 Cloudflare now handles HTTPS for your domain — even if your EC2 isn’t configured for SSL.
-
-✅ Final Test
-Check site:
-```
-curl -I https://yourdomain.com.np
-```

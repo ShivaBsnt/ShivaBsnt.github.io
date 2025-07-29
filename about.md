@@ -4,7 +4,7 @@ permalink: /about/
 layout: single
 ---
 
-[![MasterHead](/assets/images/about.jpg)]
+![MasterHead](/assets/images/about.jpg)
 <h1 align="center">Hi 👋, I'm Shiva Bahadur Basnet</h1>
 <img align="right" alt="Coding" width="400" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/media/320984a9ca58b3c73274c9259ecf6de8.gif">
 

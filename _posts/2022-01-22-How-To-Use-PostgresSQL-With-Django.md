@@ -18,20 +18,20 @@ Django is a Python-based web framework that supports model-template-view design 
 Here, I assume that you have already installed postgresSQL into your computer and know how to run it on terminal. 
 
 ![postgres_console](/assets/images/2022-01-22-How-To-Use-PostgresSQL-With-Django/postgres_console.PNG)
-### Step1. Create a database
-Once you see a postgres console create a databse with the command below:
+### Step1. Create a Database User with Password
+Once you are in the PostgreSQL console (psql), create a user with the following command:
 
-       CREATE DATABASE newproject;
+       CREATE USER user_name WITH PASSWORD 'strong_password';
 
-### Step2. Create a database user
-The command above only creates a database but we need to create a database user too. So let's create a user.
+### Step2.  Create a Database
+The previous command only created the user. Now, create a database and assign the newly created user as its owner:
 
-      CREATE USER newprojectuser WITH PASSWORD 'password';
+      CREATE DATABASE db_name OWNER user_name;
 
-### Step3. Grant priviliges to user on database
-We have already created a database and user for the database but we need to provide all the privileges to user on that database.
+### Step3. Grant Privileges to the User on the Database
+Although the database owner already has full privileges, it is common practice to explicitly grant them for clarity:
 
-      GRANT ALL PRIVILEGES ON DATABASE newproject to newprojectuser;
+      GRANT ALL PRIVILEGES ON DATABASE db_name TO user_name;
 
 ## Let's Configure the Django Database Settings
 ![database](/assets/images/2022-01-22-How-To-Use-PostgresSQL-With-Django/database.PNG)
@@ -41,9 +41,9 @@ Open the settings file of the Django app and set the database configuration as b
          DATABASES = {
             'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'newproject',
-            'USER': 'newprojectuser',
-            'PASSWORD': 'password',
+            'NAME': 'db_name',
+            'USER': 'user_name',
+            'PASSWORD': 'strong_password',
             'HOST': '127.0.0.1',
             'PORT': 5432,
          }

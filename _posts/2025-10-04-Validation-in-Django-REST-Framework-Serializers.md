@@ -12,7 +12,7 @@ tags:
   - "Validators"
 
 header:
-  teaser: "/assets/images/2025-10-04-Validation-in-Django-REST-Framework-Serializers/teaser.png
+  teaser: "/assets/images/2025-10-04-Validation-in-Django-REST-Framework-Serializers/teaser.png"
 ---
 ![Validation in django restframework cover page](/assets/images/2025-10-04-Validation-in-Django-REST-Framework-Serializers/cover.png)
 

@@ -169,7 +169,7 @@ This includes both:
   <tbody>
     <tr>
       <td>Field-Level</td>
-      <td><code>validate_<field_name></code></td>
+      <td><code>validate_<fieldname></code></td>
       <td>One field</td>
       <td>Simple field-based rules</td>
     </tr>
@@ -188,9 +188,6 @@ This includes both:
   </tbody>
 </table>
 
-
 ## ✨ Conclusion
 
-Serializer validation is one of the most powerful features in Django REST Framework.
-By combining field-level, object-level, and reusable validators, we can write clean, reliable, and secure API logic — keeping our data trustworthy at every level.
-
+Serializer validation is one of the most powerful features in Django REST Framework. By combining field-level, object-level, and reusable validators, we can write clean, reliable, and secure API logic — keeping our data trustworthy at every level.

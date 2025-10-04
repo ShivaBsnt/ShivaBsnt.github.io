@@ -157,11 +157,37 @@ This includes both:
 - Custom validator functions that work at the object level
 
 ## 🚀 Summary
-| Type         | Method                  | Validates         | Use Case                        |
-|--------------|------------------------|-----------------|--------------------------------|
-| Field-Level  | `validate_<fieldname>`  | One field        | Simple field-based rules        |
-| Object-Level | `validate(self, attrs)` | Multiple fields  | Dependent or relational checks  |
-| Validators   | `validators=[...]`      | Field or Object  | Reusable standalone functions   |
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Method</th>
+      <th>Validates</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Field-Level</td>
+      <td><code>validate_<fieldname></code></td>
+      <td>One field</td>
+      <td>Simple field-based rules</td>
+    </tr>
+    <tr>
+      <td>Object-Level</td>
+      <td><code>validate(self, attrs)</code></td>
+      <td>Multiple fields</td>
+      <td>Dependent or relational checks</td>
+    </tr>
+    <tr>
+      <td>Validators</td>
+      <td><code>validators=[...]</code></td>
+      <td>Field or Object</td>
+      <td>Reusable standalone functions</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## ✨ Conclusion
 Serializer validation is one of the most powerful features in Django REST Framework.

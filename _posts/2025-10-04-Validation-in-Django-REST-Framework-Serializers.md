@@ -160,10 +160,10 @@ This includes both:
 <table>
   <thead>
     <tr>
-      <th>Type</th>
-      <th>Method</th>
-      <th>Validates</th>
-      <th>Use Case</th>
+      <th scope="col">Type</th>
+      <th scope="col">Method</th>
+      <th scope="col">Validates</th>
+      <th scope="col">Use Case</th>
     </tr>
   </thead>
   <tbody>

@@ -169,19 +169,19 @@ This includes both:
   <tbody>
     <tr>
       <td>Field-Level</td>
-      <td>validate_<fieldname></td>
+      <td><code>validate_<field_name></code></td>
       <td>One field</td>
       <td>Simple field-based rules</td>
     </tr>
     <tr>
       <td>Object-Level</td>
-      <td><validate(self, attrs)</td>
+      <td><code>validate(self, attrs)</code></td>
       <td>Multiple fields</td>
       <td>Dependent or relational checks</td>
     </tr>
     <tr>
       <td>Validators</td>
-      <td>validators=[...]</td>
+      <td><code>validators=[...]</code></td>
       <td>Field or Object</td>
       <td>Reusable standalone functions</td>
     </tr>

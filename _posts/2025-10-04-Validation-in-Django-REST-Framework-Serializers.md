@@ -157,6 +157,7 @@ This includes both:
 - Custom validator functions that work at the object level
 
 ## 🚀 Summary
+{% raw %}
 <table>
   <thead>
     <tr>
@@ -169,7 +170,7 @@ This includes both:
   <tbody>
     <tr>
       <td>Field-Level</td>
-      <td><code>validate_<fieldname></code></td>
+      <td><code>validate_&lt;fieldname&gt;</code></td>
       <td>One field</td>
       <td>Simple field-based rules</td>
     </tr>
@@ -187,6 +188,7 @@ This includes both:
     </tr>
   </tbody>
 </table>
+{% endraw %}
 
 ## ✨ Conclusion
 

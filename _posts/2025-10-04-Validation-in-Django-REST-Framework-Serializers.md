@@ -19,7 +19,7 @@ header:
 Validation is a core part of any REST API. It ensures that the data received from clients is correct, consistent, and secure before it reaches our database.
 
 In Django REST Framework (DRF), serializers handle both data transformation and validation.
-When we call serializer.is_valid(), DRF runs several layers of validation behind the scenes — from simple field checks to complex, multi-field rules.
+When we call serializer.is_valid(), DRF runs several layers of validation behind the scenes from simple field checks to complex, multi-field rules.
 
 In this article, we’ll look at the three main types of validation we can perform directly inside a serializer.
 
@@ -82,10 +82,11 @@ class BookingSerializer(serializers.Serializer):
 > Use object-level validation for cross-field logic where multiple values need to be compared or related.
 
 ## 3. Validators
-We can also attach external validator functions directly to serializer fields using the validators argument.
+We can also attach external **validator functions** directly to serializer fields using the **validators** argument.
 
 This approach is ideal when the same validation rule is used across multiple serializers.
 
+#### Example:
 ```Python
 def validate_even(value):
     if value % 2 != 0:
@@ -97,7 +98,9 @@ class NumberSerializer(serializers.Serializer):
 > [! TIP]
 > Use validator functions to keep our code modular and clean - perfect for shared validation logic.
 
-Serializer classes can also include reusable validators that are applied to the complete set of field data. These validators are included by declaring them on an inner Meta class, like so:
+Serializer classes can also include reusable validators that are applied to the complete set of field data. These validators are included by declaring them on an inner **Meta class**, like so:
+
+#### Example:
 ```Python
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
@@ -116,7 +119,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         ]
 ```
 ## 📋 Validation Flow in a Serializer
-When .is_valid() is called, DRF executes validation in this order:
+When **.is_valid()** is called, DRF executes validation in this order:
 ### 1. Built-in Field Validation
 Each field (like CharField, EmailField, etc.) first runs its native Django/DRF validation, such as:
 
@@ -130,7 +133,7 @@ Each field (like CharField, EmailField, etc.) first runs its native Django/DRF v
 
 - allow_blank, etc.
 
-These are handled by the field’s own run_validation() and run_validators()methods.
+These are handled by the field’s own **run_validation()** and **run_validators()** methods.
 
 ### 2. Field-Level Validators (attached via validators=[...])
 After built-in validation, DRF executes explicit validators attached to each field.
@@ -138,16 +141,15 @@ These are functions or validator classes passed like this:
 ```Python
 number = serializers.IntegerField(validators=[validate_even])
 ```
-### 3. Custom Field-Level Validation (validate_<fieldname\>)
-After built-in and field-attached validators, DRF calls our serializer’s validate_<field_name\> methods.
+### 3. Custom Field-Level Validation
+After built-in and field-attached validators, DRF calls our serializer’s **validate_<field_name\>** methods.
 ```Python
 def validate_age(self, value):
-
 ```
 These methods are defined inside our serializer and handle logic specific to one field.
 
-### 4. Object-Level Validation (validate(self, attrs))
-Once all fields have been individually validated, DRF passes the complete dictionary of validated data (attrs) to our serializer’s validate() method.
+### 4. Object-Level Validation
+Once all fields have been individually validated, DRF passes the complete dictionary of validated data (**attrs**) to our serializer’s **validate()** method.
 This is where we can check inter-field relationships.
 
 ### 5. Meta Validators (Meta.validators)
@@ -192,4 +194,4 @@ This includes both:
 
 ## ✨ Conclusion
 
-Serializer validation is one of the most powerful features in Django REST Framework. By combining field-level, object-level, and reusable validators, we can write clean, reliable, and secure API logic — keeping our data trustworthy at every level.
+Serializer validation is one of the most powerful features in Django REST Framework. By combining field-level, object-level, and reusable validators, we can write clean, reliable, and secure API logic keeping our data trustworthy at every level.

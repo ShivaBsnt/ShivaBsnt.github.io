@@ -23,7 +23,7 @@ Permissions are means to **grant or deny access for different classes of users**
 ## View Permissions
 There are two methods in **APIView** [(rest_framework/views.py)](https://github.com/encode/django-rest-framework/blob/main/rest_framework/views.py) that check for permissions:
 
-1. `check_permissions` checks if the request should be permitted **based on the request**
+1. **check_permissions** checks if the request should be permitted **based on the request**
 {% highlight python linenos %}
 def check_permissions(self, request):
     """
@@ -39,7 +39,7 @@ def check_permissions(self, request):
             )
 {% endhighlight %}
 
-The `check_permission method` is called before the view handler is executed inside the `initial` method.
+The **check_permission method** is called before the view handler is executed inside the **initial** method.
     
 {% highlight python linenos %}
 def initial(self, request, *args, **kwargs):
@@ -62,8 +62,8 @@ def initial(self, request, *args, **kwargs):
     self.check_throttles(request)
 {% endhighlight %}
 
-3. `check_object_permissions` checks if the request should be permitted **based on the request and the object**
-   
+2. **check_object_permissions** checks if the request should be permitted **based on the request and the object**
+
 {% highlight python linenos %}
 def check_object_permissions(self, request, obj):
     """
@@ -79,9 +79,9 @@ def check_object_permissions(self, request, obj):
             )
 {% endhighlight %}
 
-The `check_object_permissions` method is not executed unless it is called explicitly.
-   
-#### `check_object_permissions` in APIView
+The **check_object_permissions** method is not executed unless it is called explicitly.
+
+#### check_object_permissions in APIView
 
 {% highlight python linenos %}
 class ExampleAPIView(APIView):
@@ -93,9 +93,9 @@ def get(self, request, pk):
     return Response(serializer.data)
 {% endhighlight %} 
 
-#### `check_object_permissions` in `GenericAPIView` and `GenericViewSet`
+#### check_object_permissions in GenericAPIView and GenericViewSet
 
-In GenericAPIView, the `check_object_permissions` method is called inside `get_object` method after the object is retrieved from the database.
+In GenericAPIView, the **check_object_permissions** method is called inside the **get_object** method after the object is retrieved from the database.
 
 {% highlight python linenos %}
 class GenericAPIView(views.APIView):
@@ -125,22 +125,20 @@ class GenericAPIView(views.APIView):
         # May raise a permission denied
         self.check_object_permissions(self.request, obj) # <- method is called here
 
-        return obj`
+        return obj
 {% endhighlight %}
 
-Now, since the class `GenericViewSet` inherits `ViewSetMixin` and `GenericAPIView`, `GenericViewSet(ViewSetMixin, generics.GenericAPIView)` also calls the `check_object_permissions` method inside the `get_object` method.
+Now, since the class **GenericViewSet** inherits **ViewSetMixin** and **GenericAPIView**, **GenericViewSet(ViewSetMixin, generics.GenericAPIView)** also calls the **check_object_permissions** method inside the **get_object** method.
 
 ## Permission Configuration
-
 There are two ways of setting permissions in Django Rest Framework:
-
 1. **Global Permission Policy**
     
 A rule that applies to **every API view** in our project unless we override it.
 
 **Example:**
 
-If we set this in `settings.py`:
+If we set this in **settings.py**:
 {% highlight python linenos %}
     REST_FRAMEWORK = 
     {
@@ -150,6 +148,7 @@ If we set this in `settings.py`:
         ]
     }
 {% endhighlight %}
+
 Then all APIs will require authentication by default.
     
 2. **View-Specific Permission Policy**
@@ -164,7 +163,7 @@ class ExampleAPIView(APIView):
 Here, even if the global policy requires authentication, this view overrides it.
 
 ## Permission Classes
-Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [built-in classes](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the `BasePermission` class:
+Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [built-in classes](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the **BasePermission** class:
 
 {% highlight python linenos %}
 class BasePermission(metaclass=BasePermissionMetaclass):
@@ -184,23 +183,23 @@ class BasePermission(metaclass=BasePermissionMetaclass):
         """
         return True
 {% endhighlight %}
-Each permission class overrides one or both methods of `BasePermission` to conditionally return `True`. When a method returns `True`, access is granted; otherwise, access is denied.
 
-Those two methods in `BasePermission` are:
+Each permission class overrides one or both methods of **BasePermission** to conditionally return **True**. When a method returns **True**, access is granted; otherwise, access is denied.
 
-**1. has_permission**
+Those two methods in **BasePermission** are:
+
+1. **has_permission**
 
 Checks if the request and user has access to the view in general (not tied to any specific object).
 
-The `has_permission` method is invoked through the `check_permissions` method, which runs the `has_permission` method of all permission classes defined in the view.
+The **has_permission** method is invoked through the **check_permissions** method, which runs the **has_permission** method of all permission classes defined in the view.
 
-**2. has_object_permission**
+2. **has_object_permission**
 
 Checks if the request and the user have permission to interact with a specific object.
 
 
-The `has_object_permission` method is invoked through the `check_object_permissions` method, which runs the `has_object_permission` method of all permission classes defined in the view.
-
+The **has_object_permission** method is invoked through the **check_object_permissions** method, which runs the **has_object_permission** method of all permission classes defined in the view.
 
 ## How Permissions Work in DRF
 When a request hits a DRF API view:
@@ -208,16 +207,16 @@ When a request hits a DRF API view:
 1. Authentication happens first
 
     If authentication succeeds:
-    - `request.user` is set to the authenticated user object.
-    - `request.auth` is set to any additional authentication data (like a token).
+    - **request.user** is set to the authenticated user object.
+    - **request.auth** is set to any additional authentication data (like a token).
 
     If authentication fails:
-    - `request.user` becomes an `AnonymousUser` (instance of `django.contrib.auth.models.AnonymousUser`).
-    - `request.auth` is set to `None`.
+    - **request.user** becomes an **AnonymousUser** (instance of **django.contrib.auth.models.AnonymousUser**).
+    - **request.auth** is set to **None**.
 
 2. Permission checks run next
 
-    DRF runs the `has_permission()` or `has_object_permission()` method of each permission class listed in the view (or globally).
+    DRF runs the **has_permission** or **has_object_permission** method of each permission class listed in the view (or globally).
 
     If permission succeeds:
     
@@ -225,7 +224,7 @@ When a request hits a DRF API view:
 
     If permission fails:
 
-    - The request stops immediately with an `exceptions.PermissionDenied` or `exceptions.NotAuthenticated`, and DRF returns a "**403 Forbidden**" or "**401 Unauthorized**" response.
+    - The request stops immediately with an **exceptions.PermissionDenied** or **exceptions.NotAuthenticated**, and DRF returns a "**403 Forbidden**" or "**401 Unauthorized**" response.
 
 
 ## Built-in Permission Classes
@@ -233,16 +232,16 @@ With regard to the built-in DRF permission classes, all of them override has_per
 
 | **Permission Class** | **has_permission()** | **has_object_permission()** |
 |------------------------|----------------------|------------------------------|
-| `AllowAny` | ✅ Yes | ❌ No |
-| `IsAuthenticated` | ✅ Yes | ❌ No |
-| `IsAdminUser` | ✅ Yes | ❌ No |
-| `IsAuthenticatedOrReadOnly` | ✅ Yes | ❌ No |
-| `DjangoModelPermissions` | ✅ Yes | ❌ No |
-| `DjangoModelPermissionsOrAnonReadOnly` | ✅ Yes | ❌ No |
-| `DjangoObjectPermissions` | ✅ Yes | ✅ Yes |
+| **AllowAny** | ✅ Yes | ❌ No |
+| **IsAuthenticated** | ✅ Yes | ❌ No |
+| **IsAdminUser** | ✅ Yes | ❌ No |
+| **IsAuthenticatedOrReadOnly** | ✅ Yes | ❌ No |
+| **DjangoModelPermissions** | ✅ Yes | ❌ No |
+| **DjangoModelPermissionsOrAnonReadOnly** | ✅ Yes | ❌ No |
+| **DjangoObjectPermissions** | ✅ Yes | ✅ Yes |
 
 ## Custom Permission Classes
-The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from `BasePermission`. These classes let us define our own access rules using the `has_permission` and `has_object_permission` methods.
+The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from **BasePermission**. These classes let us define our own access rules using the **has_permission** and **has_object_permission** methods.
 
 {% highlight python linenos %}
 from rest_framework.permissions import BasePermission, SAFE_METHODS
@@ -268,7 +267,7 @@ class IsOwnerOrReadOnly(BasePermission):
 {% endhighlight %}
 
 ## Conclusion
-Permissions in Django REST Framework are a powerful way to control access to our APIs. By combining built-in permission classes with custom permissions, we can handle everything from general view-level access to fine-grained object-level control. Understanding how methods like `has_permission`, `has_object_permission`, `check_permissions`, and `check_object_permissions` work ensures that our APIs remain secure, flexible, and maintainable. We should always choose the right permission strategy based on our project’s needs to provide both safety and a smooth user experience.
+Permissions in Django REST Framework are a powerful way to control access to our APIs. By combining built-in permission classes with custom permissions, we can handle everything from general view-level access to fine-grained object-level control. Understanding how methods like **has_permission**, **has_object_permission**, **check_permissions**, and **check_object_permissions** work ensures that our APIs remain secure, flexible, and maintainable. We should always choose the right permission strategy based on our project’s needs to provide both safety and a smooth user experience.
 
 
 

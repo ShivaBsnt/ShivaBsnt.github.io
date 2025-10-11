@@ -132,6 +132,7 @@ Since, the class **GenericViewSet** also inherits **GenericAPIView**, it also ca
 
 ## 🔹 Permission Configuration
 There are two ways of setting permissions in Django Rest Framework:
+
 a. **Global Permission Policy**
     
 A rule that applies to **every API view** in our project unless we override it.
@@ -163,7 +164,7 @@ class ExampleAPIView(APIView):
 Here, even if the global policy requires authentication, this view overrides it.
 
 ## 🔹 Permission Classes
-Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [built-in classes](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the **BasePermission** class:
+Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [**built-in classes**](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the **BasePermission** class:
 
 {% highlight python linenos %}
 class BasePermission(metaclass=BasePermissionMetaclass):
@@ -188,18 +189,18 @@ Each permission class overrides one or both methods of **BasePermission** to con
 
 Those two methods in **BasePermission** are:
 
-1. **has_permission**
+a. **has_permission()**
 
 Checks if the request and user has access to the view in general (not tied to any specific object).
 
-The **has_permission** method is invoked through the **check_permissions** method, which runs the **has_permission** method of all permission classes defined in the view.
+The **has_permission()** method is invoked through the **check_permissions()** method, which runs the **has_permission()** method of all permission classes defined in the view.
 
-2. **has_object_permission**
+b. **has_object_permission()**
 
 Checks if the request and the user have permission to interact with a specific object.
 
 
-The **has_object_permission** method is invoked through the **check_object_permissions** method, which runs the **has_object_permission** method of all permission classes defined in the view.
+The **has_object_permission()** method is invoked through the **check_object_permissions()** method, which runs the **has_object_permission()** method of all permission classes defined in the view.
 
 ## 🔹 How Permissions Work in DRF
 When a request hits a DRF API view:
@@ -216,7 +217,7 @@ When a request hits a DRF API view:
 
 2. Permission checks run next
 
-    DRF runs the **has_permission** or **has_object_permission** method of each permission class listed in the view (or globally).
+    DRF runs the **has_permission()** or **has_object_permission()** method of each permission class listed in the view (or globally).
 
     If permission succeeds:
     

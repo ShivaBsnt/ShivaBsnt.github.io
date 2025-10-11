@@ -93,9 +93,9 @@ def get(self, request, pk):
     return Response(serializer.data)
 {% endhighlight %} 
 
-**check_object_permissions in GenericAPIView and GenericViewSet**
+**check_object_permissions in ViewSets and Generic Views**
 
-In GenericAPIView, the **check_object_permissions** method is called inside the **get_object** method after the object is retrieved from the database.
+In GenericAPIView, the **check_object_permissions()** method is called inside the **get_object()** method after the object is retrieved from the database.
 
 {% highlight python linenos %}
 class GenericAPIView(views.APIView):
@@ -128,7 +128,7 @@ class GenericAPIView(views.APIView):
         return obj
 {% endhighlight %}
 
-Now, since the class **GenericViewSet** inherits **ViewSetMixin** and **GenericAPIView**, **GenericViewSet(ViewSetMixin, generics.GenericAPIView)** also calls the **check_object_permissions** method inside the **get_object** method.
+Since the class **GenericViewSet** inherits **ViewSetMixin** and **GenericAPIView**, **GenericViewSet** also calls the **check_object_permissions()** method inside the **get_object()** method.
 
 ## Permission Configuration
 There are two ways of setting permissions in Django Rest Framework:

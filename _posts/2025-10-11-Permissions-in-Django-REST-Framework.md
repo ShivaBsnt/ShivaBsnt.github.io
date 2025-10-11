@@ -25,62 +25,62 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
 
 1. **check_permissions** checks if the request should be permitted **based on the request**
 
-    {% highlight python linenos %}
-    def check_permissions(self, request):
-        """
-        Check if the request should be permitted.
-        Raises an appropriate exception if the request is not permitted.
-        """
-        for permission in self.get_permissions():
-            if not permission.has_permission(request, self):
-                self.permission_denied(
-                    request,
-                    message=getattr(permission, 'message', None),
-                    code=getattr(permission, 'code', None)
-                )
-    {% endhighlight %}
+   {% highlight python linenos %}
+   def check_permissions(self, request):
+    """
+    Check if the request should be permitted.
+    Raises an appropriate exception if the request is not permitted.
+    """
+    for permission in self.get_permissions():
+        if not permission.has_permission(request, self):
+            self.permission_denied(
+                request,
+                message=getattr(permission, 'message', None),
+                code=getattr(permission, 'code', None)
+            )
+   {% endhighlight %}
 
-    The **check_permission method** is called before the view handler is executed inside the **initial** method.
-    
-    {% highlight python linenos %}
-    def initial(self, request, *args, **kwargs):
-        """
-        Runs anything that needs to occur prior to calling the method handler.
-        """
-        self.format_kwarg = self.get_format_suffix(**kwargs)
+   The **check_permission method** is called before the view handler is executed inside the **initial** method.
 
-        # Perform content negotiation and store the accepted info on the request
-        neg = self.perform_content_negotiation(request)
-        request.accepted_renderer, request.accepted_media_type = neg
+   {% highlight python linenos %}
+   def initial(self, request, *args, **kwargs):
+    """
+    Runs anything that needs to occur prior to calling the method handler.
+    """
+    self.format_kwarg = self.get_format_suffix(**kwargs)
 
-        # Determine the API version, if versioning is in use.
-        version, scheme = self.determine_version(request, *args, **kwargs)
-        request.version, request.versioning_scheme = version, scheme
+    # Perform content negotiation and store the accepted info on the request
+    neg = self.perform_content_negotiation(request)
+    request.accepted_renderer, request.accepted_media_type = neg
 
-        # Ensure that the incoming request is permitted
-        self.perform_authentication(request)
-        self.check_permissions(request) # <- method is called here
-        self.check_throttles(request)
-    {% endhighlight %}
+    # Determine the API version, if versioning is in use.
+    version, scheme = self.determine_version(request, *args, **kwargs)
+    request.version, request.versioning_scheme = version, scheme
+
+    # Ensure that the incoming request is permitted
+    self.perform_authentication(request)
+    self.check_permissions(request) # <- method is called here
+    self.check_throttles(request)
+   {% endhighlight %}
 
 2. **check_object_permissions** checks if the request should be permitted **based on the request and the object**
 
-    {% highlight python linenos %}
-    def check_object_permissions(self, request, obj):
-        """
-        Check if the request should be permitted for a given object.
-        Raises an appropriate exception if the request is not permitted.
-        """
-        for permission in self.get_permissions():
-            if not permission.has_object_permission(request, self, obj):
-                self.permission_denied(
-                    request,
-                    message=getattr(permission, 'message', None),
-                    code=getattr(permission, 'code', None)
-                )
-    {% endhighlight %}
-
-    The **check_object_permissions** method is not executed unless it is called explicitly.
+   {% highlight python linenos %}
+   def check_object_permissions(self, request, obj):
+    """
+    Check if the request should be permitted for a given object.
+    Raises an appropriate exception if the request is not permitted.
+    """
+    for permission in self.get_permissions():
+        if not permission.has_object_permission(request, self, obj):
+            self.permission_denied(
+                request,
+                message=getattr(permission, 'message', None),
+                code=getattr(permission, 'code', None)
+            )
+   {% endhighlight %}
+   
+   The **check_object_permissions** method is not executed unless it is called explicitly.
 
 #### check_object_permissions in APIView
 

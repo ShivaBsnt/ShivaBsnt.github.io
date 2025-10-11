@@ -25,7 +25,7 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
 
 1. **check_permissions** checks if the request should be permitted **based on the request**
 
-   {% highlight python linenos %}
+ {% highlight python linenos %}
    def check_permissions(self, request):
     """
     Check if the request should be permitted.
@@ -38,11 +38,11 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
                 message=getattr(permission, 'message', None),
                 code=getattr(permission, 'code', None)
             )
-   {% endhighlight %}
+ {% endhighlight %}
 
    The **check_permission method** is called before the view handler is executed inside the **initial** method.
 
-   {% highlight python linenos %}
+ {% highlight python linenos %}
    def initial(self, request, *args, **kwargs):
     """
     Runs anything that needs to occur prior to calling the method handler.
@@ -61,7 +61,7 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
     self.perform_authentication(request)
     self.check_permissions(request) # <- method is called here
     self.check_throttles(request)
-   {% endhighlight %}
+ {% endhighlight %}
 
 2. **check_object_permissions** checks if the request should be permitted **based on the request and the object**
 

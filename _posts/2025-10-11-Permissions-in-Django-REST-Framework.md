@@ -1,5 +1,5 @@
 ---
-title: "Validation in Django REST Framework Serializers"
+title: "Permissions in Django REST Framework"
 categories: "DRF"
 tags:
   - "Permissions"

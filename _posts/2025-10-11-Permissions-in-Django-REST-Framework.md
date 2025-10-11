@@ -132,7 +132,7 @@ Since, the class **GenericViewSet** also inherits **GenericAPIView**, it also ca
 
 ## 🔹 Permission Configuration
 There are two ways of setting permissions in Django Rest Framework:
-1. **Global Permission Policy**
+a. **Global Permission Policy**
     
 A rule that applies to **every API view** in our project unless we override it.
 
@@ -151,7 +151,7 @@ If we set this in **settings.py**:
 
 Then all APIs will require authentication by default.
     
-2. **View-Specific Permission Policy**
+b. **View-Specific Permission Policy**
 
 A rule that applies only to a **particular API view or endpoint**, not the whole project.
 
@@ -162,7 +162,7 @@ class ExampleAPIView(APIView):
 
 Here, even if the global policy requires authentication, this view overrides it.
 
-## Permission Classes
+## 🔹 Permission Classes
 Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [built-in classes](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the **BasePermission** class:
 
 {% highlight python linenos %}
@@ -201,7 +201,7 @@ Checks if the request and the user have permission to interact with a specific o
 
 The **has_object_permission** method is invoked through the **check_object_permissions** method, which runs the **has_object_permission** method of all permission classes defined in the view.
 
-## How Permissions Work in DRF
+## 🔹 How Permissions Work in DRF
 When a request hits a DRF API view:
 
 1. Authentication happens first
@@ -227,7 +227,7 @@ When a request hits a DRF API view:
     - The request stops immediately with an **exceptions.PermissionDenied** or **exceptions.NotAuthenticated**, and DRF returns a "**403 Forbidden**" or "**401 Unauthorized**" response.
 
 
-## Built-in Permission Classes
+## 🔹 Built-in Permission Classes
 With regard to the built-in DRF permission classes, all of them override has_permission while only DjangoObjectPermissions overrides has_object_permission:
 
 | **Permission Class** | **has_permission()** | **has_object_permission()** |
@@ -240,7 +240,7 @@ With regard to the built-in DRF permission classes, all of them override has_per
 | **DjangoModelPermissionsOrAnonReadOnly** | ✅ Yes | ❌ No |
 | **DjangoObjectPermissions** | ✅ Yes | ✅ Yes |
 
-## Custom Permission Classes
+## 🔹 Custom Permission Classes
 The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from **BasePermission**. These classes let us define our own access rules using the **has_permission** and **has_object_permission** methods.
 
 {% highlight python linenos %}
@@ -266,7 +266,7 @@ class IsOwnerOrReadOnly(BasePermission):
         return Response(serializer.data)
 {% endhighlight %}
 
-## Conclusion
+## 🔹 Conclusion
 Permissions in Django REST Framework are a powerful way to control access to our APIs. By combining built-in permission classes with custom permissions, we can handle everything from general view-level access to fine-grained object-level control. Understanding how methods like **has_permission**, **has_object_permission**, **check_permissions**, and **check_object_permissions** work ensures that our APIs remain secure, flexible, and maintainable. We should always choose the right permission strategy based on our project’s needs to provide both safety and a smooth user experience.
 
 

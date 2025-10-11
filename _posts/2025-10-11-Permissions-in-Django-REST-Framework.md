@@ -24,134 +24,144 @@ Permissions are means to **grant or deny access for different classes of users**
 There are two methods in **APIView** [(rest_framework/views.py)](https://github.com/encode/django-rest-framework/blob/main/rest_framework/views.py) that check for permissions:
 
 1. `check_permissions` checks if the request should be permitted **based on the request**
-    {% highlight python linenos %}
-    def check_permissions(self, request):
-        """
-        Check if the request should be permitted.
-        Raises an appropriate exception if the request is not permitted.
-        """
-        for permission in self.get_permissions():
-            if not permission.has_permission(request, self):
-                self.permission_denied(
-                    request,
-                    message=getattr(permission, 'message', None),
-                    code=getattr(permission, 'code', None)
-                )
-    {% endhighlight %}
-    The `check_permission method` is called before the view handler is executed inside the `initial` method.
-    {% highlight python linenos %}
-    def initial(self, request, *args, **kwargs):
-        """
-        Runs anything that needs to occur prior to calling the method handler.
-        """
-        self.format_kwarg = self.get_format_suffix(**kwargs)
-
-        # Perform content negotiation and store the accepted info on the request
-        neg = self.perform_content_negotiation(request)
-        request.accepted_renderer, request.accepted_media_type = neg
-
-        # Determine the API version, if versioning is in use.
-        version, scheme = self.determine_version(request, *args, **kwargs)
-        request.version, request.versioning_scheme = version, scheme
-
-        # Ensure that the incoming request is permitted
-        self.perform_authentication(request)
-        self.check_permissions(request) # <- method is called here
-        self.check_throttles(request)
-    {% endhighlight %}
-
-2. `check_object_permissions` checks if the request should be permitted **based on the request and the object**
-    {% highlight python linenos %}
-    def check_object_permissions(self, request, obj):
-        """
-        Check if the request should be permitted for a given object.
-        Raises an appropriate exception if the request is not permitted.
-        """
-        for permission in self.get_permissions():
-            if not permission.has_object_permission(request, self, obj):
-                self.permission_denied(
-                    request,
-                    message=getattr(permission, 'message', None),
-                    code=getattr(permission, 'code', None)
-                )
-    {% endhighlight %}
-    The `check_object_permissions` method is not executed unless it is called explicitly.
-
-    ### `check_object_permissions` in APIView
-    {% highlight python linenos %}
-    class ExampleAPIView(APIView):
-
-    def get(self, request, pk):
-        example = get_object_or_404(Example.objects.all(), pk=pk)
-        self.check_object_permissions(request, example) #<- method is explicitly called here
-        serializer = ExampleSerializer(message)
-        return Response(serializer.data)
-    {% endhighlight %} 
-    ### `check_object_permissions` in `GenericAPIView` and `GenericViewSet`
-    In GenericAPIView, the `check_object_permissions` method is called inside `get_object` method after the object is retrieved from the database.
-
-    {% highlight python linenos %}
-    class GenericAPIView(views.APIView):
-        def get_object(self):
-            """
-            Returns the object the view is displaying.
-
-            You may want to override this if you need to provide non-standard
-            queryset lookups.  Eg if objects are referenced using multiple
-            keyword arguments in the url conf.
-            """
-            queryset = self.filter_queryset(self.get_queryset())
-
-            # Perform the lookup filtering.
-            lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
-
-            assert lookup_url_kwarg in self.kwargs, (
-                'Expected view %s to be called with a URL keyword argument '
-                'named "%s". Fix your URL conf, or set the `.lookup_field` '
-                'attribute on the view correctly.' %
-                (self.__class__.__name__, lookup_url_kwarg)
+{% highlight python linenos %}
+def check_permissions(self, request):
+    """
+    Check if the request should be permitted.
+    Raises an appropriate exception if the request is not permitted.
+    """
+    for permission in self.get_permissions():
+        if not permission.has_permission(request, self):
+            self.permission_denied(
+                request,
+                message=getattr(permission, 'message', None),
+                code=getattr(permission, 'code', None)
             )
+{% endhighlight %}
 
-            filter_kwargs = {self.lookup_field: self.kwargs[lookup_url_kwarg]}
-            obj = get_object_or_404(queryset, **filter_kwargs)
+The `check_permission method` is called before the view handler is executed inside the `initial` method.
+    
+{% highlight python linenos %}
+def initial(self, request, *args, **kwargs):
+    """
+    Runs anything that needs to occur prior to calling the method handler.
+    """
+    self.format_kwarg = self.get_format_suffix(**kwargs)
 
-            # May raise a permission denied
-            self.check_object_permissions(self.request, obj) # <- method is called here
+    # Perform content negotiation and store the accepted info on the request
+    neg = self.perform_content_negotiation(request)
+    request.accepted_renderer, request.accepted_media_type = neg
 
-            return obj`
-    {% endhighlight %}
-    Now, since the class `GenericViewSet` inherits `ViewSetMixin` and `GenericAPIView`, `GenericViewSet(ViewSetMixin, generics.GenericAPIView)` also calls the `check_object_permissions` method inside the `get_object` method.
+    # Determine the API version, if versioning is in use.
+    version, scheme = self.determine_version(request, *args, **kwargs)
+    request.version, request.versioning_scheme = version, scheme
 
+    # Ensure that the incoming request is permitted
+    self.perform_authentication(request)
+    self.check_permissions(request) # <- method is called here
+    self.check_throttles(request)
+{% endhighlight %}
+
+3. `check_object_permissions` checks if the request should be permitted **based on the request and the object**
+   
+{% highlight python linenos %}
+def check_object_permissions(self, request, obj):
+    """
+    Check if the request should be permitted for a given object.
+    Raises an appropriate exception if the request is not permitted.
+    """
+    for permission in self.get_permissions():
+        if not permission.has_object_permission(request, self, obj):
+            self.permission_denied(
+                request,
+                message=getattr(permission, 'message', None),
+                code=getattr(permission, 'code', None)
+            )
+{% endhighlight %}
+
+The `check_object_permissions` method is not executed unless it is called explicitly.
+   
+#### `check_object_permissions` in APIView
+
+{% highlight python linenos %}
+class ExampleAPIView(APIView):
+
+def get(self, request, pk):
+    example = get_object_or_404(Example.objects.all(), pk=pk)
+    self.check_object_permissions(request, example) #<- method is explicitly called here
+    serializer = ExampleSerializer(message)
+    return Response(serializer.data)
+{% endhighlight %} 
+
+#### `check_object_permissions` in `GenericAPIView` and `GenericViewSet`
+
+In GenericAPIView, the `check_object_permissions` method is called inside `get_object` method after the object is retrieved from the database.
+
+{% highlight python linenos %}
+class GenericAPIView(views.APIView):
+    def get_object(self):
+        """
+        Returns the object the view is displaying.
+
+        You may want to override this if you need to provide non-standard
+        queryset lookups.  Eg if objects are referenced using multiple
+        keyword arguments in the url conf.
+        """
+        queryset = self.filter_queryset(self.get_queryset())
+
+        # Perform the lookup filtering.
+        lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field
+
+        assert lookup_url_kwarg in self.kwargs, (
+            'Expected view %s to be called with a URL keyword argument '
+            'named "%s". Fix your URL conf, or set the `.lookup_field` '
+            'attribute on the view correctly.' %
+            (self.__class__.__name__, lookup_url_kwarg)
+        )
+
+        filter_kwargs = {self.lookup_field: self.kwargs[lookup_url_kwarg]}
+        obj = get_object_or_404(queryset, **filter_kwargs)
+
+        # May raise a permission denied
+        self.check_object_permissions(self.request, obj) # <- method is called here
+
+        return obj`
+{% endhighlight %}
+
+Now, since the class `GenericViewSet` inherits `ViewSetMixin` and `GenericAPIView`, `GenericViewSet(ViewSetMixin, generics.GenericAPIView)` also calls the `check_object_permissions` method inside the `get_object` method.
 
 ## Permission Configuration
+
 There are two ways of setting permissions in Django Rest Framework:
+
 1. **Global Permission Policy**
     
-    A rule that applies to **every API view** in our project unless we override it.
-    
-    **Example:**
+A rule that applies to **every API view** in our project unless we override it.
 
-    If we set this in `settings.py`:
-    {% highlight python linenos %}
-        REST_FRAMEWORK = 
-        {
-            'DEFAULT_PERMISSION_CLASSES':
-            [
-                'rest_framework.permissions.IsAuthenticated',
-            ]
-        }
-    {% endhighlight %}
-    Then all APIs will require authentication by default.
+**Example:**
+
+If we set this in `settings.py`:
+{% highlight python linenos %}
+    REST_FRAMEWORK = 
+    {
+        'DEFAULT_PERMISSION_CLASSES':
+        [
+            'rest_framework.permissions.IsAuthenticated',
+        ]
+    }
+{% endhighlight %}
+Then all APIs will require authentication by default.
     
 2. **View-Specific Permission Policy**
 
-    A rule that applies only to a **particular API view or endpoint**, not the whole project.
-    {% highlight python linenos %}
-    class ExampleAPIView(APIView):
-        permission_classes = [AllowAny]
-    {% endhighlight %}
-    Here, even if the global policy requires authentication, this view overrides it.
+A rule that applies only to a **particular API view or endpoint**, not the whole project.
 
+{% highlight python linenos %}
+class ExampleAPIView(APIView):
+    permission_classes = [AllowAny]
+{% endhighlight %}
+
+Here, even if the global policy requires authentication, this view overrides it.
 
 ## Permission Classes
 Permissions in DRF are defined as a list of permission classes. We can either create our own or use one of the seven [built-in classes](https://www.django-rest-framework.org/api-guide/permissions/#api-reference). All permission classes, either custom or built-in, extend from the `BasePermission` class:
@@ -221,15 +231,15 @@ When a request hits a DRF API view:
 ## Built-in Permission Classes
 With regard to the built-in DRF permission classes, all of them override has_permission while only DjangoObjectPermissions overrides has_object_permission:
 
-| **Permission Class** | **has_permission()** | **has_object_permission()** | **Description** |
-|------------------------|----------------------|------------------------------|-----------------|
-| `AllowAny` | ✅ Yes | ❌ No | Grants access to everyone — no authentication required. |
-| `IsAuthenticated` | ✅ Yes | ❌ No | Grants access only to authenticated users. |
-| `IsAdminUser` | ✅ Yes | ❌ No | Grants access only to users with `is_staff=True`. |
-| `IsAuthenticatedOrReadOnly` | ✅ Yes | ❌ No | Allows read-only access to unauthenticated users; write access only to authenticated users. |
-| `DjangoModelPermissions` | ✅ Yes | ❌ No | Grants access based on Django model-level permissions (`add`, `change`, `delete`, `view`). |
-| `DjangoModelPermissionsOrAnonReadOnly` | ✅ Yes | ❌ No | Same as above but allows read-only access for anonymous users. |
-| `DjangoObjectPermissions` | ✅ Yes | ✅ Yes | Uses Django’s object-level permissions to control access per object.
+| **Permission Class** | **has_permission()** | **has_object_permission()** |
+|------------------------|----------------------|------------------------------|
+| `AllowAny` | ✅ Yes | ❌ No |
+| `IsAuthenticated` | ✅ Yes | ❌ No |
+| `IsAdminUser` | ✅ Yes | ❌ No |
+| `IsAuthenticatedOrReadOnly` | ✅ Yes | ❌ No |
+| `DjangoModelPermissions` | ✅ Yes | ❌ No |
+| `DjangoModelPermissionsOrAnonReadOnly` | ✅ Yes | ❌ No |
+| `DjangoObjectPermissions` | ✅ Yes | ✅ Yes |
 
 ## Custom Permission Classes
 The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from `BasePermission`. These classes let us define our own access rules using the `has_permission` and `has_object_permission` methods.

@@ -28,16 +28,16 @@ Field-level validation focuses on validating a **single field** at a time.
     
 We can specify custom field-level validation by adding **.validate_<field_name\>** methods to our **Serializer** subclass.
 
-```Python
+{% highlight python linenos %}
     validate_<field_name>(self, value)
-```
+{% endhighlight %}
     
 This method takes a single argument, which is the field value that requires validation.
 
 Our **validate_<field_name\>** methods should return the validated value or raise a **serializers.ValidationError**.
 
 #### Example:
-```Python
+{% highlight python linenos %}
     from rest_framework import serializers
 
     class UserSerializer(serializers.Serializer):
@@ -48,7 +48,7 @@ Our **validate_<field_name\>** methods should return the validated value or rais
             if value < 18:
                 raise serializers.ValidationError("User must be at least 18 years old.")
             return value 
-```
+{% endhighlight %}
 > [! TIP]
 > Use field-level validation for single-field checks such as range limits, allowed characters, or forbidden values.
 
@@ -60,15 +60,15 @@ Sometimes, validation depends on multiple fields - for instance, ensuring one da
 
 In such cases, define a method named **.validate(self, attrs)** inside our serializer.
 
-```Python
+{% highlight python linenos %}
 validate(self, attrs)
-```
+{% endhighlight %}
 This method takes a single argument, which is all the validated field values as a dictionary.
 
 It should raise a **serializers.ValidationError** if necessary, or just return the validated values.
 
 #### Example:
-```Python
+{% highlight python linenos %}
 class BookingSerializer(serializers.Serializer):
     start_date = serializers.DateField()
     end_date = serializers.DateField()
@@ -77,7 +77,7 @@ class BookingSerializer(serializers.Serializer):
         if attrs['start_date'] > attrs['end_date']:
             raise serializers.ValidationError("End date must be after start date.")
         return attrs
-```
+{% endhighlight %}
 > [! TIP]
 > Use object-level validation for cross-field logic where multiple values need to be compared or related.
 
@@ -87,21 +87,21 @@ We can also attach external **validator functions** directly to serializer field
 This approach is ideal when the same validation rule is used across multiple serializers.
 
 #### Example:
-```Python
+{% highlight python linenos %}
 def validate_even(value):
     if value % 2 != 0:
         raise serializers.ValidationError("This field must be an even number.")
 
 class NumberSerializer(serializers.Serializer):
     number = serializers.IntegerField(validators=[validate_even])
-```
+{% endhighlight %}
 > [! TIP]
 > Use validator functions to keep our code modular and clean - perfect for shared validation logic.
 
 Serializer classes can also include reusable validators that are applied to the complete set of field data. These validators are included by declaring them on an inner **Meta class**, like so:
 
 #### Example:
-```Python
+{% highlight python linenos %}
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
 from myapp.models import UserProfile
@@ -117,7 +117,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
                 fields=['username', 'email']
             )
         ]
-```
+{% endhighlight %}
 ## 📋 Validation Flow in a Serializer
 When **.is_valid()** is called, DRF executes validation in this order:
 ### 1. Built-in Field Validation
@@ -138,14 +138,14 @@ These are handled by the field’s own **run_validation()** and **run_validators
 ### 2. Field-Level Validators (attached via validators=[...])
 After built-in validation, DRF executes explicit validators attached to each field.
 These are functions or validator classes passed like this:
-```Python
+{% highlight python linenos %}
 number = serializers.IntegerField(validators=[validate_even])
-```
+{% endhighlight %}
 ### 3. Custom Field-Level Validation
 After built-in and field-attached validators, DRF calls our serializer’s **validate_<field_name\>** methods.
-```Python
+{% highlight python linenos %}
 def validate_age(self, value):
-```
+{% endhighlight %}
 These methods are defined inside our serializer and handle logic specific to one field.
 
 ### 4. Object-Level Validation

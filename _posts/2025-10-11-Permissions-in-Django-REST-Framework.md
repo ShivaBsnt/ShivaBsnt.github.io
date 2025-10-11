@@ -23,7 +23,7 @@ Permissions are means to **grant or deny access for different classes of users**
 ## View Permissions
 There are two methods in **APIView** [(rest_framework/views.py)](https://github.com/encode/django-rest-framework/blob/main/rest_framework/views.py) that check for permissions:
 
-a. **check_permissions** checks if the request should be permitted **based on the request**
+1.**check_permissions** checks if the request should be permitted **based on the request**
 {% highlight python linenos %}
 def check_permissions(self, request):
 """
@@ -62,7 +62,7 @@ self.check_permissions(request) # <- method is called here
 self.check_throttles(request)
 {% endhighlight %}
 
-b. **check_object_permissions** checks if the request should be permitted **based on the request and the object**
+2.**check_object_permissions** checks if the request should be permitted **based on the request and the object**
 
 {% highlight python linenos %}
   def check_object_permissions(self, request, obj):

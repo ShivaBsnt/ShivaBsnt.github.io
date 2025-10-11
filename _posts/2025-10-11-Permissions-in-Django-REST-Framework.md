@@ -25,8 +25,8 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
 
 1. **check_permissions** checks if the request should be permitted **based on the request**
 
- {% highlight python linenos %}
-   def check_permissions(self, request):
+{% highlight python linenos %}
+def check_permissions(self, request):
     """
     Check if the request should be permitted.
     Raises an appropriate exception if the request is not permitted.
@@ -38,12 +38,12 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
                 message=getattr(permission, 'message', None),
                 code=getattr(permission, 'code', None)
             )
- {% endhighlight %}
+{% endhighlight %}
 
-   The **check_permission method** is called before the view handler is executed inside the **initial** method.
+The **check_permissions method** is called before the view handler is executed inside the **initial** method.
 
- {% highlight python linenos %}
-   def initial(self, request, *args, **kwargs):
+{% highlight python linenos %}
+def initial(self, request, *args, **kwargs):
     """
     Runs anything that needs to occur prior to calling the method handler.
     """
@@ -61,12 +61,12 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
     self.perform_authentication(request)
     self.check_permissions(request) # <- method is called here
     self.check_throttles(request)
- {% endhighlight %}
+{% endhighlight %}
 
 2. **check_object_permissions** checks if the request should be permitted **based on the request and the object**
 
-   {% highlight python linenos %}
-   def check_object_permissions(self, request, obj):
+{% highlight python linenos %}
+def check_object_permissions(self, request, obj):
     """
     Check if the request should be permitted for a given object.
     Raises an appropriate exception if the request is not permitted.
@@ -78,9 +78,9 @@ There are two methods in **APIView** [(rest_framework/views.py)](https://github.
                 message=getattr(permission, 'message', None),
                 code=getattr(permission, 'code', None)
             )
-   {% endhighlight %}
-   
-   The **check_object_permissions** method is not executed unless it is called explicitly.
+{% endhighlight %}
+
+This method is called when a request is made against a **specific object**, allowing permissions to be checked on a per-object basis rather than globally for the view.
 
 #### check_object_permissions in APIView
 

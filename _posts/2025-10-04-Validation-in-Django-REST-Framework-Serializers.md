@@ -29,7 +29,7 @@ Field-level validation focuses on validating a **single field** at a time.
 We can specify custom field-level validation by adding **.validate_<field_name\>** methods to our **Serializer** subclass.
 
 {% highlight python linenos %}
-    validate_<field_name>(self, value)
+validate_<field_name>(self, value)
 {% endhighlight %}
     
 This method takes a single argument, which is the field value that requires validation.
@@ -38,16 +38,16 @@ Our **validate_<field_name\>** methods should return the validated value or rais
 
 #### Example:
 {% highlight python linenos %}
-    from rest_framework import serializers
+from rest_framework import serializers
 
-    class UserSerializer(serializers.Serializer):
-        username = serializers.CharField(max_length=50)
-        age = serializers.IntegerField()
+class UserSerializer(serializers.Serializer):
+  username = serializers.CharField(max_length=50)
+  age = serializers.IntegerField()
 
-        def validate_age(self, value):
-            if value < 18:
-                raise serializers.ValidationError("User must be at least 18 years old.")
-            return value 
+  def validate_age(self, value):
+    if value < 18:
+      raise serializers.ValidationError("User must be at least 18 years old.")
+    return value 
 {% endhighlight %}
 > [! TIP]
 > Use field-level validation for single-field checks such as range limits, allowed characters, or forbidden values.

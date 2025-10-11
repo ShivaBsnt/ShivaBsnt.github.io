@@ -12,9 +12,9 @@ tags:
   - "Django REST Framework"
 
 header:
-  teaser: "/assets/images/2025-10-04-Validation-in-Django-REST-Framework-Serializers/teaser.png"
+  teaser: "/assets/images/2025-10-11-Permissions-in-Django-REST-Framework/teaser.png"
 ---
-![Validation in django restframework cover page](/assets/images/2025-10-04-Validation-in-Django-REST-Framework-Serializers/cover.png)
+![Validation in django restframework cover page](/assets/images/2025-10-11-Permissions-in-Django-REST-Framework/cover.png)
 
 # Introduction
 Permissions are means to **grant or deny access for different classes of users** to different parts of the API. It runs at the very start of the view, before any other code is allowed to proceed. Since **authentication by itself won't allow or disallow an incoming request**, the entity requesting access must go through permissions checks to gain information or code.

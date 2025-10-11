@@ -229,7 +229,7 @@ When a request hits a DRF API view:
 
 
 ## 🔹 Built-in Permission Classes
-With regard to the built-in DRF permission classes, all of them override has_permission while only DjangoObjectPermissions overrides has_object_permission:
+With regard to the built-in DRF permission classes, all of them override **has_permission()** while only DjangoObjectPermissions overrides **has_object_permission()**:
 
 | **Permission Class** | **has_permission()** | **has_object_permission()** |
 |------------------------|----------------------|------------------------------|
@@ -242,7 +242,7 @@ With regard to the built-in DRF permission classes, all of them override has_per
 | **DjangoObjectPermissions** | ✅ Yes | ✅ Yes |
 
 ## 🔹 Custom Permission Classes
-The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from **BasePermission**. These classes let us define our own access rules using the **has_permission** and **has_object_permission** methods.
+The built-in permission classes aren’t enough for project-specific requirements. In such cases, DRF allows us to create custom permission classes by inheriting from **BasePermission**. These classes let us define our own access rules using the **has_permission()** and **has_object_permission()** methods.
 
 {% highlight python linenos %}
 from rest_framework.permissions import BasePermission, SAFE_METHODS
@@ -268,7 +268,7 @@ class IsOwnerOrReadOnly(BasePermission):
 {% endhighlight %}
 
 ## 🔹 Conclusion
-Permissions in Django REST Framework are a powerful way to control access to our APIs. By combining built-in permission classes with custom permissions, we can handle everything from general view-level access to fine-grained object-level control. Understanding how methods like **has_permission**, **has_object_permission**, **check_permissions**, and **check_object_permissions** work ensures that our APIs remain secure, flexible, and maintainable. We should always choose the right permission strategy based on our project’s needs to provide both safety and a smooth user experience.
+Permissions in Django REST Framework are a powerful way to control access to our APIs. By combining built-in permission classes with custom permissions, we can handle everything from general view-level access to fine-grained object-level control. Understanding how methods like **has_permission()**, **has_object_permission()**, **check_permissions()**, and **check_object_permissions()** work ensures that our APIs remain secure, flexible, and maintainable. We should always choose the right permission strategy based on our project’s needs to provide both safety and a smooth user experience.
 
 
 

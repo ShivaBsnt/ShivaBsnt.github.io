@@ -3,9 +3,6 @@ title: Privacy Policy
 permalink: /privacy-policy/
 layout: single
 ---
-
-# Privacy Policy
-
 **Last updated:** April 2026
 
 Welcome to shivabahadurbasnet.com.np. This Privacy Policy explains how we collect, use, and protect your information when you visit our website.
@@ -47,7 +44,7 @@ Google may use cookies, including the DoubleClick cookie, to:
 - Measure ad performance  
 
 You can learn more about how Google uses data here:  
-https://policies.google.com/technologies/ads
+[Google Ads Policy](https://policies.google.com/technologies/ads)
 
 ---
 
@@ -116,4 +113,5 @@ We may update this Privacy Policy from time to time. Changes will be posted on t
 
 If you have any questions about this Privacy Policy, you can contact us via:
 
-- Website: https://shivabahadurbasnet.com.np
+- Contact page: https://shivabahadurbasnet.com.np/contact/
+- Email: shivabahadurbasnet313@gmail.com

@@ -19,7 +19,7 @@ locale: "en-US"
 title: "Shiva Basnet"
 title_separator: "-"
 # subtitle: "IT'S EITHER 0 OR 1"
-name: "Shiva Bahadur Basnet"
+name: "Shiva Basnet"
 description: "A platform dedicated to providing insightful and practical content on various programming topics. Get ready to delve into the intricacies of programming concepts and share valuable tutorials and guides. From demystifying the inner workings of Python's 'For Loop' to offering an iterative approach for reversing linked lists in Python, it covers a wide range of topics. Dive into the articles to learn about dynamically modifying fields in Django Rest Framework, gain a comprehensive understanding of Hash Tables, or master the art of dumping and restoring PostgreSQL databases. The blog offers informative and engaging content to enhance your programming skills."
 url: https://shivabsnt.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
@@ -94,16 +94,13 @@ author:
   name: "Shiva Bahadur Basnet"
   avatar: /assets/images/profile.jpeg
   bio: "I am Shiva Bahadur Basnet, a full-time Software Engineer - Data at Insight Workshop."
-  location: "Nepal"
+  location: "Auckland, NZ 🇳🇿"
   
   links:
     - label: "Email"
       icon: "fas fa-paper-plane"
       url: "mailto:shivabahadurbasnet313@gmail.com"
 
-    # - label: "Facebook"
-    #   icon: "fab fa-fw fa-facebook-square"
-    #   url: https://www.facebook.com/shiva.basnet.148
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: https://github.com/ShivaBsnt
@@ -111,13 +108,6 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: https://www.linkedin.com/in/shivabsnt/
-
-    - label: "Leetcode"
-      icon: "fas fa-code"
-      url: https://leetcode.com/u/shiva_bahaur/
-    # - label: "Buy Me a Coffee"
-    #   icon: "fas fa-fw fa-mug-hot"
-    #   url : "https://www.buymeacoffee.com/bshiva"
 
 # Site Footer
 footer:
@@ -133,17 +123,6 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/shivabsnt/"
-
-    - label: "Leetcode"
-      icon: "fas fa-code"
-      url: "https://leetcode.com/u/shivabahadurbasnet/"
-    # - label: "Facebook"
-    #   icon: "fab fa-facebook-square"
-    #   url: "https://www.facebook.com/shiva.basnet.148"
-
-    # - label: "Instagram"
-    #   icon: "fab fa-instagram"
-    #   url: "https://www.instagram.com/iamshivabasnet/"
 
 # Reading Files
 include:

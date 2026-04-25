@@ -124,6 +124,9 @@ footer:
       icon: "fab fa-linkedin"
       url: "https://www.linkedin.com/in/shivabsnt/"
 
+    - label: "Privacy Policy"
+      url: "/privacy-policy/"
+
 # Reading Files
 include:
   - .htaccess

@@ -91,9 +91,9 @@ analytics:
     anonymize_ip: # true, false (default)
 
 author:
-  name: "Shiva Bahadur Basnet"
+  name: "Shiva Basnet"
   avatar: /assets/images/profile.jpeg
-  bio: "Master of Computer and Information Science student, AUT | Software Engineer (Data)"
+  bio: "Master of Computer and Information Science , AUT"
   location: "Auckland, NZ"
   
   links:
